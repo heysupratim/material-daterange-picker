@@ -4,6 +4,11 @@ Material Date Picker with FROM and TO Date Range Selection
 
 Credit to the original amazing material date picker library by wdullaer - https://github.com/wdullaer/MaterialDateTimePicker
 
+Screens 
+
+![FROM](/screenshots/1.png?raw=true)
+![TO](/screenshots/1.png?raw=true)
+
 Support for Android 4.0 and up.
 
 From the original library documentation -
