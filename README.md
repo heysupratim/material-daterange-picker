@@ -1,0 +1,50 @@
+Material Date Picker with FROM and TO Date Range Selection
+======================================================
+
+
+Credit to the original amazing material date picker library by wdullaer - https://github.com/wdullaer/MaterialDateTimePicker
+
+Support for Android 4.0 and up.
+
+From the original library documentation -
+
+You may also add the library as an Android Library to your project. All the library files live in ```library```.
+
+Using the  Pickers
+--------------------------------
+
+1. Implement an `OnDateSetListener`
+2. Create a ``DatePickerDialog` using the supplied factory
+
+### Implement an `OnDateSetListener`
+In order to receive the date  set in the picker, you will need to implement the `OnDateSetListener` interfaces. Typically this will be the `Activity` or `Fragment` that creates the Pickers.
+
+```java
+
+//new onDateSet
+@Override
+public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth,int yearEnd, int monthOfYearEnd, int dayOfMonthEnd) {
+
+}
+```
+
+### Create a DatePickerDialog` using the supplied factory
+You will need to create a new instance of `DatePickerDialog` using the static `newInstance()` method, supplying proper default values and a callback. Once the dialogs are configured, you can call `show()`.
+```java
+Calendar now = Calendar.getInstance();
+DatePickerDialog dpd = DatePickerDialog.newInstance(
+  MainActivity.this,
+  now.get(Calendar.YEAR),
+  now.get(Calendar.MONTH),
+  now.get(Calendar.DAY_OF_MONTH);
+);
+dpd.show(getFragmentManager(), "Datepickerdialog");
+```
+
+For other documentation regarding theming , handling orientation changes , and callbacks - check out the original documentation - https://github.com/wdullaer/MaterialDateTimePicker
+
+TODO
+----
+
+1. Add the range picker for time too
+2. More device config handling
