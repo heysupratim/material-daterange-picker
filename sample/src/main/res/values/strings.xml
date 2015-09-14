@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Material Date Range Picker</string>
-    <string name="title_activity_main">Example Screen</string>
+    <string name="title_activity_main">Range Picker</string>
     <string name="selected_time">The time you picked will be shown here.</string>
     <string name="selected_date">The date you picked will be shown here.</string>
     <string name="pick_time">Pick Time</string>
