@@ -13,7 +13,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<com.wdullaer.materialdatetimepicker.date.AccessibleDateAnimator
+<com.borax12.materialdaterangepicker.date.AccessibleDateAnimator
      xmlns:android="http://schemas.android.com/apk/res/android"
      android:id="@+id/animator"
      android:layout_width="@dimen/mdtp_date_picker_component_width"

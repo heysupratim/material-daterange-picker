@@ -26,7 +26,7 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <com.wdullaer.materialdatetimepicker.AccessibleLinearLayout
+    <com.borax12.materialdaterangepicker.AccessibleLinearLayout
         android:id="@+id/date_picker_month_and_day"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,9 +59,9 @@
             android:textSize="25sp"
             android:layout_marginLeft="8dp"
             tools:text="15"/>
-    </com.wdullaer.materialdatetimepicker.AccessibleLinearLayout>
+    </com.borax12.materialdaterangepicker.AccessibleLinearLayout>
 
-    <com.wdullaer.materialdatetimepicker.AccessibleTextView
+    <com.borax12.materialdaterangepicker.AccessibleTextView
         android:id="@+id/date_picker_year"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
