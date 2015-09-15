@@ -17,11 +17,24 @@
             android:layout_height="wrap_content"
             android:text="@string/pick_date" />
 
-        <TextView
+    <Button
+        android:id="@+id/time_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PICK TIME" />
+
+    <TextView
             android:id="@+id/date_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/selected_date"
             android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/time_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/selected_time"
+        android:layout_marginTop="10dp" />
 
 </LinearLayout>

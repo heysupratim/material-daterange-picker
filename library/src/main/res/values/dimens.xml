@@ -20,7 +20,7 @@
     <item name="mdtp_circle_radius_multiplier" format="float" type="string">0.82</item>
     <item name="mdtp_circle_radius_multiplier_24HourMode" format="float" type="string">0.85</item>
     <item name="mdtp_selection_radius_multiplier" format="float" type="string">0.16</item>
-    <item name="mdtp_ampm_circle_radius_multiplier" format="float" type="string">0.22</item>
+    <item name="mdtp_ampm_circle_radius_multiplier" format="float" type="string">0.15</item>
     <item name="mdtp_numbers_radius_multiplier_normal" format="float" type="string">0.81</item>
     <item name="mdtp_numbers_radius_multiplier_inner" format="float" type="string">0.60</item>
     <item name="mdtp_numbers_radius_multiplier_outer" format="float" type="string">0.83</item>
@@ -28,18 +28,18 @@
     <item name="mdtp_text_size_multiplier_inner" format="float" type="string">0.11</item>
     <item name="mdtp_text_size_multiplier_outer" format="float" type="string">0.08</item>
 
-    <dimen name="mdtp_time_label_size">60sp</dimen>
+    <dimen name="mdtp_time_label_size">40sp</dimen>
     <dimen name="mdtp_extra_time_label_margin">-30dp</dimen>
     <dimen name="mdtp_ampm_label_size">16sp</dimen>
     <dimen name="mdtp_done_label_size">14sp</dimen>
     <dimen name="mdtp_ampm_left_padding">6dip</dimen>
     <dimen name="mdtp_separator_padding">4dip</dimen>
-    <dimen name="mdtp_header_height">96dip</dimen>
+    <dimen name="mdtp_header_height">90dip</dimen>
     <dimen name="mdtp_footer_height">48dip</dimen>
     <dimen name="mdtp_minimum_margin_sides">48dip</dimen>
     <dimen name="mdtp_minimum_margin_top_bottom">24dip</dimen>
-    <dimen name="mdtp_picker_dimen">270dip</dimen>
-    <dimen name="mdtp_time_picker_height">300dip</dimen>
+    <dimen name="mdtp_picker_dimen">280dip</dimen>
+    <dimen name="mdtp_time_picker_height">280dip</dimen>
 
     <dimen name="mdtp_date_picker_component_width">270dp</dimen>
     <dimen name="mdtp_date_picker_header_height">30dp</dimen>
