@@ -5,16 +5,15 @@ Material Date and Time Picker with Range Selection
 Credit to the original amazing material date picker library by wdullaer - https://github.com/wdullaer/MaterialDateTimePicker
 
 ##Update
-Added Time Range Picker
+-Added Time Range Picker
 
-Screens 
 
-Date Selection
+##Date Selection
 
 ![FROM](/screenshots/2.png?raw=true)
 ![TO](/screenshots/1.png?raw=true)
 
-Time Selection
+##Time Selection
 
 ![FROM](/screenshots/3.png?raw=true)
 ![TO](/screenshots/4.png?raw=true)
