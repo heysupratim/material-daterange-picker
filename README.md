@@ -1,5 +1,7 @@
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MaterialDateRangePicker-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/2501)
 
+[ ![Download](https://api.bintray.com/packages/borax12/maven/material-datetime-rangepicker/images/download.svg) ](https://bintray.com/borax12/maven/material-datetime-rangepicker/_latestVersion)
+
 Material Date and Time Picker with Range Selection
 ======================================================
 
