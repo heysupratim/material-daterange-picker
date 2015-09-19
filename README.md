@@ -6,6 +6,23 @@ Material Date and Time Picker with Range Selection
 
 Credit to the original amazing material date picker library by wdullaer - https://github.com/wdullaer/MaterialDateTimePicker
 
+##Adding to your project
+
+Add the jcenter repository information in your build.gradle file like this
+```java
+
+repositories {
+  jcenter()
+}
+
+
+dependencies {
+  compile 'com.borax12.materialdaterangepicker:library:1.1'
+}
+
+```
+
+
 ##Update
 -Added Time Range Picker
 
