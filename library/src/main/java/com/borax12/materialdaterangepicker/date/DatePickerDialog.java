@@ -284,7 +284,7 @@ public class DatePickerDialog extends DialogFragment implements
             Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView: ");
         getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-        View view = inflater.inflate(R.layout.mdtp_date_picker_dialog, null);
+        View view = inflater.inflate(R.layout.range_date_picker_dialog, null);
 
         tabHost = (TabHost) view.findViewById(R.id.tabHost);
         tabHost.findViewById(R.id.tabHost);
