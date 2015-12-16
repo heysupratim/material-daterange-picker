@@ -289,13 +289,16 @@ public class DatePickerDialog extends DialogFragment implements
         tabHost = (TabHost) view.findViewById(R.id.tabHost);
         tabHost.findViewById(R.id.tabHost);
         tabHost.setup();
+
+        final Activity activity = getActivity();
+
         TabHost.TabSpec startDatePage = tabHost.newTabSpec("start");
         startDatePage.setContent(R.id.start_date_group);
-        startDatePage.setIndicator("FROM");
+        startDatePage.setIndicator(activity.getResources().getString(R.string.mdtp_from));
 
         TabHost.TabSpec endDatePage = tabHost.newTabSpec("end");
         endDatePage.setContent(R.id.end_date_group);
-        endDatePage.setIndicator("TO");
+        endDatePage.setIndicator(activity.getResources().getString(R.string.mdtp_to));
 
         tabHost.addTab(startDatePage);
         tabHost.addTab(endDatePage);
@@ -348,7 +351,6 @@ public class DatePickerDialog extends DialogFragment implements
             mDismissOnPause = savedInstanceState.getBoolean(KEY_DISMISS);
         }
 
-        final Activity activity = getActivity();
         mDayPickerView = new com.borax12.materialdaterangepicker.date.SimpleDayPickerView(activity, this);
         mYearPickerView = new com.borax12.materialdaterangepicker.date.YearPickerView(activity, this);
         mDayPickerViewEnd = new com.borax12.materialdaterangepicker.date.SimpleDayPickerView(activity, this);

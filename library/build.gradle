@@ -7,14 +7,14 @@ ext {
 
     publishedGroupId = 'com.borax12.materialdaterangepicker'
     libraryName = 'MaterialDateRangePicker'
-    artifact = 'material-datetime-rangepicker'
+    artifact = 'library'
 
     libraryDescription = 'A material Date and Time Range Picker for Android'
 
     siteUrl = 'https://github.com/borax12/MaterialDateRangePicker'
     gitUrl = 'https://github.com/borax12/MaterialDateRangePicker.git'
 
-    libraryVersion = '1.1'
+    libraryVersion = '1.2'
 
     developerId = 'borax12'
     developerName = 'Supratim Chakraborty'
