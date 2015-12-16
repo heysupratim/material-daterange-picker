@@ -490,18 +490,22 @@ public class TimePickerDialog extends DialogFragment implements OnValueSelectedL
             }
         }
         if (mAccentColor != -1) {
+            mTimePicker.setAccentColor(mAccentColor);
+            mTimePickerEnd.setAccentColor(mAccentColor);
+            mOkButton.setTextColor(mAccentColor);
+        }else{
+            int circleBackground = res.getColor(R.color.mdtp_circle_background);
+            int backgroundColor = res.getColor(R.color.mdtp_background_color);
+            int darkBackgroundColor = res.getColor(R.color.mdtp_light_gray);
 
+            int lightGray = res.getColor(R.color.mdtp_light_gray);
+
+            mTimePicker.setBackgroundColor(mThemeDark? lightGray : circleBackground);
+            mTimePickerEnd.setBackgroundColor(mThemeDark ? lightGray : circleBackground);
+            view.findViewById(R.id.time_picker_dialog).setBackgroundColor(mThemeDark ? darkBackgroundColor : backgroundColor);
         }
 
-        int circleBackground = res.getColor(R.color.mdtp_circle_background);
-        int backgroundColor = res.getColor(R.color.mdtp_background_color);
-        int darkBackgroundColor = res.getColor(R.color.mdtp_light_gray);
 
-        int lightGray = res.getColor(R.color.mdtp_light_gray);
-
-        mTimePicker.setBackgroundColor(mThemeDark? lightGray : circleBackground);
-        mTimePickerEnd.setBackgroundColor(mThemeDark ? lightGray : circleBackground);
-        view.findViewById(R.id.time_picker_dialog).setBackgroundColor(mThemeDark ? darkBackgroundColor : backgroundColor);
 
         tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override

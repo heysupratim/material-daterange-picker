@@ -11,7 +11,6 @@ import android.widget.TextView;
 import com.borax12.materialdaterangepicker.date.DatePickerDialog;
 import com.borax12.materialdaterangepicker.time.RadialPickerLayout;
 import com.borax12.materialdaterangepicker.time.TimePickerDialog;
-import com.wdullaer.materialdaterangepicker.R;
 
 import java.util.Calendar;
 
