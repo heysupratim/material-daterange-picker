@@ -497,7 +497,6 @@ public class TimePickerDialog extends DialogFragment implements OnValueSelectedL
             int circleBackground = res.getColor(R.color.mdtp_circle_background);
             int backgroundColor = res.getColor(R.color.mdtp_background_color);
             int darkBackgroundColor = res.getColor(R.color.mdtp_light_gray);
-
             int lightGray = res.getColor(R.color.mdtp_light_gray);
 
             mTimePicker.setBackgroundColor(mThemeDark? lightGray : circleBackground);
