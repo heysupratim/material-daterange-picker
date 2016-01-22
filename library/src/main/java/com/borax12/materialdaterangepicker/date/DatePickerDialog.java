@@ -897,4 +897,22 @@ public class DatePickerDialog extends DialogFragment implements
     public void tryVibrate() {
         if(mVibrate) mHapticFeedbackController.tryVibrate();
     }
+    
+    /**
+     * setStartTitle
+     * @param String the title to display for start panel
+     */ 
+    public void setStartTitle(String startTitle) {
+        TabHost.TabSpec startDatePage = tabHost.newTabSpec("start");
+        startDatePage.setIndicator(startTitle);
+    }
+    
+    /**
+     * setEndTitle
+     * @param String the title to display for end panel
+     */ 
+    public void setEndTitle(String endTitle) {
+        TabHost.TabSpec endDatePage = tabHost.newTabSpec("end");
+        endDatePage.setIndicator(endTitle);
+    }
 }
