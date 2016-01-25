@@ -160,6 +160,8 @@ public class DatePickerDialog extends DialogFragment implements
     private com.borax12.materialdaterangepicker.date.YearPickerView mYearPickerViewEnd;
     private com.borax12.materialdaterangepicker.date.AccessibleDateAnimator mAnimatorEnd;
     private int tabTag=1;
+    private String startTitle;
+    private String endTitle;
 
     /**
      * The callback used to indicate the user is done filling in the date.
@@ -294,11 +296,11 @@ public class DatePickerDialog extends DialogFragment implements
 
         TabHost.TabSpec startDatePage = tabHost.newTabSpec("start");
         startDatePage.setContent(R.id.start_date_group);
-        startDatePage.setIndicator(activity.getResources().getString(R.string.mdtp_from));
+        startDatePage.setIndicator((startTitle != null && !startTitle.isEmpty()) ? startTitle : activity.getResources().getString(R.string.mdtp_from));
 
         TabHost.TabSpec endDatePage = tabHost.newTabSpec("end");
         endDatePage.setContent(R.id.end_date_group);
-        endDatePage.setIndicator(activity.getResources().getString(R.string.mdtp_to));
+        endDatePage.setIndicator((endTitle!=null&&!endTitle.isEmpty())?endTitle:activity.getResources().getString(R.string.mdtp_to));
 
         tabHost.addTab(startDatePage);
         tabHost.addTab(endDatePage);
@@ -903,8 +905,7 @@ public class DatePickerDialog extends DialogFragment implements
      * @param String the title to display for start panel
      */ 
     public void setStartTitle(String startTitle) {
-        TabHost.TabSpec startDatePage = tabHost.newTabSpec("start");
-        startDatePage.setIndicator(startTitle);
+        this.startTitle = startTitle;
     }
     
     /**
@@ -912,7 +913,6 @@ public class DatePickerDialog extends DialogFragment implements
      * @param String the title to display for end panel
      */ 
     public void setEndTitle(String endTitle) {
-        TabHost.TabSpec endDatePage = tabHost.newTabSpec("end");
-        endDatePage.setIndicator(endTitle);
+        this.endTitle = endTitle;
     }
 }
