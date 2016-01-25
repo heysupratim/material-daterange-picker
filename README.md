@@ -19,7 +19,7 @@ repositories {
 
 
 dependencies {
-  compile 'com.borax12.materialdaterangepicker:library:1.2'
+  compile 'com.borax12.materialdaterangepicker:library:1.4'
 }
 
 ```
