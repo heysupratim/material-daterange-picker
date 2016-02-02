@@ -31,7 +31,7 @@ public interface DatePickerController {
 
     void unregisterOnDateChangedListener(com.borax12.materialdaterangepicker.date.DatePickerDialog.OnDateChangedListener listener);
 
-    com.borax12.materialdaterangepicker.date.MonthAdapter.CalendarDay getSelectedDay(int which);
+    com.borax12.materialdaterangepicker.date.MonthAdapter.CalendarDay getSelectedDay();
 
     boolean isThemeDark();
     

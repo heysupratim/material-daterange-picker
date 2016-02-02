@@ -23,8 +23,8 @@ import android.content.Context;
  */
 public class SimpleMonthAdapter extends com.borax12.materialdaterangepicker.date.MonthAdapter {
 
-    public SimpleMonthAdapter(Context context, DatePickerController controller, final int which) {
-        super(context, controller, which);
+    public SimpleMonthAdapter(Context context, DatePickerController controller) {
+        super(context, controller);
     }
 
     @Override

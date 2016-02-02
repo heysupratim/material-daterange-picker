@@ -57,8 +57,6 @@ import java.util.Locale;
 public class DatePickerDialog extends DialogFragment implements
         OnClickListener, com.borax12.materialdaterangepicker.date.DatePickerController {
 
-    public static final int CALENDAR_TAB = 0;
-    public static final int CALENDAR_END_TAB = 1;
     private static final String TAG = "DatePickerDialog";
 
     private static final int UNINITIALIZED = -1;
@@ -355,11 +353,9 @@ public class DatePickerDialog extends DialogFragment implements
             mDismissOnPause = savedInstanceState.getBoolean(KEY_DISMISS);
         }
 
-        mDayPickerView = new com.borax12.materialdaterangepicker.date.SimpleDayPickerView
-                (activity, this, CALENDAR_TAB);
+        mDayPickerView = new com.borax12.materialdaterangepicker.date.SimpleDayPickerView(activity, this);
         mYearPickerView = new com.borax12.materialdaterangepicker.date.YearPickerView(activity, this);
-        mDayPickerViewEnd = new com.borax12.materialdaterangepicker.date.SimpleDayPickerView
-                (activity, this, CALENDAR_END_TAB);
+        mDayPickerViewEnd = new com.borax12.materialdaterangepicker.date.SimpleDayPickerView(activity, this);
         mYearPickerViewEnd = new com.borax12.materialdaterangepicker.date.YearPickerView(activity, this);
 
 
@@ -856,8 +852,6 @@ public class DatePickerDialog extends DialogFragment implements
             mCalendarEnd.set(Calendar.DAY_OF_MONTH, day);
         }
 
-        Log.i(TAG, "onDayOfMonthSelected called and it is  " + month + " " + day);
-        //TODO delete the above line
         updatePickers();
         updateDisplay(true);
     }
@@ -868,16 +862,8 @@ public class DatePickerDialog extends DialogFragment implements
 
 
     @Override
-    public com.borax12.materialdaterangepicker.date.MonthAdapter.CalendarDay getSelectedDay(int which) {
-        switch (which) {
-            case CALENDAR_TAB :
-                return new com.borax12.materialdaterangepicker.date.MonthAdapter.CalendarDay(mCalendar);
-            case CALENDAR_END_TAB :
-                return new com.borax12.materialdaterangepicker.date.MonthAdapter.CalendarDay(mCalendarEnd);
-            default:
-                return new com.borax12.materialdaterangepicker.date.MonthAdapter.CalendarDay(mCalendar);
-
-        }
+    public com.borax12.materialdaterangepicker.date.MonthAdapter.CalendarDay getSelectedDay() {
+        return new com.borax12.materialdaterangepicker.date.MonthAdapter.CalendarDay(mCalendar);
     }
 
     @Override

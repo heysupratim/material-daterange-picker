@@ -69,7 +69,6 @@ public abstract class DayPickerView extends ListView implements OnScrollListener
 
     protected Context mContext;
     protected Handler mHandler;
-    protected int mTag;
 
     // highlighted time
     protected MonthAdapter.CalendarDay mSelectedDay = new MonthAdapter.CalendarDay();
@@ -98,11 +97,10 @@ public abstract class DayPickerView extends ListView implements OnScrollListener
         init(context);
     }
 
-    public DayPickerView(Context context, DatePickerController controller, final int which) {
+    public DayPickerView(Context context, DatePickerController controller) {
         super(context);
         init(context);
         setController(controller);
-        mTag = which;
     }
 
     public void setController(DatePickerController controller) {
@@ -131,7 +129,7 @@ public abstract class DayPickerView extends ListView implements OnScrollListener
      */
     protected void refreshAdapter() {
         if (mAdapter == null) {
-            mAdapter = createMonthAdapter(getContext(), mController, mTag);
+            mAdapter = createMonthAdapter(getContext(), mController);
         } else {
             mAdapter.setSelectedDay(mSelectedDay);
         }
@@ -140,7 +138,7 @@ public abstract class DayPickerView extends ListView implements OnScrollListener
     }
 
     public abstract MonthAdapter createMonthAdapter(Context context,
-            DatePickerController controller, int which);
+            DatePickerController controller);
 
     /*
      * Sets all the required fields for the list view. Override this method to
@@ -373,7 +371,7 @@ public abstract class DayPickerView extends ListView implements OnScrollListener
 
     @Override
     public void onDateChanged() {
-        goTo(mController.getSelectedDay(mTag), false, true, true);
+        goTo(mController.getSelectedDay(), false, true, true);
     }
 
     /**

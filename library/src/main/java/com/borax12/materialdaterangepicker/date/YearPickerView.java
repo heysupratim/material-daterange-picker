@@ -119,8 +119,7 @@ public class YearPickerView extends ListView implements OnItemClickListener, OnD
             v.setAccentColor(mAccentColor);
             v.requestLayout();
             int year = getYearFromTextView(v);
-            boolean selected = mController.getSelectedDay(-1).year == year;
-            //TODO which tab is clicked should be entered into getSelectedDay
+            boolean selected = mController.getSelectedDay().year == year;
             v.drawIndicator(selected);
             if (selected) {
                 mSelectedView = v;
@@ -155,8 +154,7 @@ public class YearPickerView extends ListView implements OnItemClickListener, OnD
     @Override
     public void onDateChanged() {
         mAdapter.notifyDataSetChanged();
-        postSetSelectionCentered(mController.getSelectedDay(-1).year - mController.getMinYear());
-        //TODO which tab is clicked should be entered into getSelectedDay
+        postSetSelectionCentered(mController.getSelectedDay().year - mController.getMinYear());
     }
 
     @Override

@@ -39,8 +39,6 @@ public abstract class MonthAdapter extends BaseAdapter implements OnDayClickList
     protected final DatePickerController mController;
 
     private CalendarDay mSelectedDay;
-    private int mTag;
-
 
     private int mAccentColor = -1;
 
@@ -110,12 +108,11 @@ public abstract class MonthAdapter extends BaseAdapter implements OnDayClickList
     }
 
     public MonthAdapter(Context context,
-            DatePickerController controller, final int which) {
+            DatePickerController controller) {
         mContext = context;
         mController = controller;
-        mTag = which;
         init();
-        setSelectedDay(mController.getSelectedDay(mTag));
+        setSelectedDay(mController.getSelectedDay());
     }
 
     public void setAccentColor(int color) {
