@@ -852,7 +852,7 @@ public class DatePickerDialog extends DialogFragment implements
             mCalendarEnd.set(Calendar.DAY_OF_MONTH, day);
         }
 
-        updatePickers();
+        //updatePickers();
         updateDisplay(true);
     }
 
@@ -863,7 +863,12 @@ public class DatePickerDialog extends DialogFragment implements
 
     @Override
     public com.borax12.materialdaterangepicker.date.MonthAdapter.CalendarDay getSelectedDay() {
-        return new com.borax12.materialdaterangepicker.date.MonthAdapter.CalendarDay(mCalendar);
+        if(tabHost.getCurrentTab()==0){
+            return new com.borax12.materialdaterangepicker.date.MonthAdapter.CalendarDay(mCalendar);
+        }else{
+            return new com.borax12.materialdaterangepicker.date.MonthAdapter.CalendarDay(mCalendarEnd);
+        }
+
     }
 
     @Override
