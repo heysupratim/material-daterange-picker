@@ -75,8 +75,8 @@ public class DatePickerDialog extends DialogFragment implements
     private static final String KEY_WEEK_START_END = "week_start_end";
     private static final String KEY_YEAR_START = "year_start";
     private static final String KEY_YEAR_START_END = "year_start_end";
-    private static final String KEY_YEAR_END = "year_end";
-    private static final String KEY_YEAR_END_END = "year_end_end";
+    private static final String KEY_MAX_YEAR = "max_year";
+    private static final String KEY_MAX_YEAR_END = "max_year_end";
     private static final String KEY_CURRENT_VIEW = "current_view";
     private static final String KEY_CURRENT_VIEW_END = "current_view_end";
     private static final String KEY_LIST_POSITION_OFFSET = "list_position_offset";
@@ -244,14 +244,14 @@ public class DatePickerDialog extends DialogFragment implements
         outState.putInt(KEY_SELECTED_DAY, mCalendar.get(Calendar.DAY_OF_MONTH));
         outState.putInt(KEY_WEEK_START, mWeekStart);
         outState.putInt(KEY_YEAR_START, mMinYear);
-        outState.putInt(KEY_YEAR_END, mMaxYear);
+        outState.putInt(KEY_MAX_YEAR, mMaxYear);
         outState.putInt(KEY_CURRENT_VIEW, mCurrentView);
         outState.putInt(KEY_SELECTED_YEAR_END, mCalendarEnd.get(Calendar.YEAR));
         outState.putInt(KEY_SELECTED_MONTH_END, mCalendarEnd.get(Calendar.MONTH));
         outState.putInt(KEY_SELECTED_DAY_END, mCalendarEnd.get(Calendar.DAY_OF_MONTH));
         outState.putInt(KEY_WEEK_START_END, mWeekStartEnd);
         outState.putInt(KEY_YEAR_START_END, mMinYear);
-        outState.putInt(KEY_YEAR_END_END, mMaxYear);
+        outState.putInt(KEY_MAX_YEAR_END, mMaxYear);
         outState.putInt(KEY_CURRENT_VIEW_END, mCurrentViewEnd);
         int listPosition = -1;
         int listPositionEnd = -1;
@@ -332,7 +332,7 @@ public class DatePickerDialog extends DialogFragment implements
             mWeekStart = savedInstanceState.getInt(KEY_WEEK_START);
             mWeekStartEnd = savedInstanceState.getInt(KEY_WEEK_START_END);
             mMinYear = savedInstanceState.getInt(KEY_YEAR_START);
-            mMaxYear = savedInstanceState.getInt(KEY_YEAR_END);
+            mMaxYear = savedInstanceState.getInt(KEY_MAX_YEAR);
             currentView = savedInstanceState.getInt(KEY_CURRENT_VIEW);
             currentViewEnd = savedInstanceState.getInt(KEY_CURRENT_VIEW_END);
             listPosition = savedInstanceState.getInt(KEY_LIST_POSITION);
