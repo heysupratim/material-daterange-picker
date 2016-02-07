@@ -71,7 +71,6 @@ public class DatePickerDialog extends DialogFragment implements
     private static final String KEY_SELECTED_DAY_END = "day_end";
     private static final String KEY_LIST_POSITION = "list_position";
     private static final String KEY_LIST_POSITION_END = "list_position_end";
-    private static final String KEY_SELECTED_TAB = "selected_tab";
     private static final String KEY_WEEK_START = "week_start";
     private static final String KEY_WEEK_START_END = "week_start_end";
     private static final String KEY_YEAR_START = "year_start";
@@ -268,7 +267,6 @@ public class DatePickerDialog extends DialogFragment implements
         }
         outState.putInt(KEY_LIST_POSITION, listPosition);
         outState.putInt(KEY_LIST_POSITION_END, listPositionEnd);
-        outState.putInt(KEY_SELECTED_TAB, tabHost.getCurrentTab());
         outState.putSerializable(KEY_MIN_DATE, mMinDate);
         outState.putSerializable(KEY_MAX_DATE, mMaxDate);
         outState.putSerializable(KEY_MIN_DATE_END, mMinDateEnd);
@@ -340,7 +338,6 @@ public class DatePickerDialog extends DialogFragment implements
             listPosition = savedInstanceState.getInt(KEY_LIST_POSITION);
             listPositionOffset = savedInstanceState.getInt(KEY_LIST_POSITION_OFFSET);
             listPositionEnd = savedInstanceState.getInt(KEY_LIST_POSITION_END);
-            tabHost.setCurrentTab(savedInstanceState.getInt(KEY_SELECTED_TAB));
             listPositionOffsetEnd = savedInstanceState.getInt(KEY_LIST_POSITION_OFFSET_END);
             mMinDate = (Calendar)savedInstanceState.getSerializable(KEY_MIN_DATE);
             mMaxDate = (Calendar)savedInstanceState.getSerializable(KEY_MAX_DATE);
