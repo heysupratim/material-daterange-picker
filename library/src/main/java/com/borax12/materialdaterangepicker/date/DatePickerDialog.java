@@ -205,14 +205,41 @@ public class DatePickerDialog extends DialogFragment implements
         return ret;
     }
 
+    /**
+     *
+     * @param callBack How the parent is notified that the date is set.
+     * @param year The initial year of the dialog.
+     * @param monthOfYear The initial month of the dialog.
+     * @param dayOfMonth The initial day of the dialog.
+     * @param yearEnd The end year of the dialog.
+     * @param montOfYearEnd The end month of the dialog.
+     * @param dayOfMonthEnd  The end day of the dialog.
+     */
+    public static DatePickerDialog newInstance(OnDateSetListener callBack, int year,
+                                               int monthOfYear,
+                                               int dayOfMonth,
+                                               int yearEnd,
+                                               int montOfYearEnd,
+                                               int dayOfMonthEnd) {
+        DatePickerDialog ret = new DatePickerDialog();
+        ret.initialize(callBack, year, monthOfYear, dayOfMonth, yearEnd, montOfYearEnd, dayOfMonthEnd);
+        return ret;
+    }
+
     public void initialize(OnDateSetListener callBack, int year, int monthOfYear, int dayOfMonth) {
+        initialize(callBack, year, monthOfYear, dayOfMonth, year, monthOfYear, dayOfMonth);
+    }
+
+    public void initialize(OnDateSetListener callBack, int year, int monthOfYear, int dayOfMonth, int yearEnd,
+                           int montOfYearEnd,
+                           int dayOfMonthEnd) {
         mCallBack = callBack;
         mCalendar.set(Calendar.YEAR, year);
         mCalendar.set(Calendar.MONTH, monthOfYear);
         mCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-        mCalendarEnd.set(Calendar.YEAR, year);
-        mCalendarEnd.set(Calendar.MONTH, monthOfYear);
-        mCalendarEnd.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+        mCalendarEnd.set(Calendar.YEAR, yearEnd);
+        mCalendarEnd.set(Calendar.MONTH, montOfYearEnd);
+        mCalendarEnd.set(Calendar.DAY_OF_MONTH, dayOfMonthEnd);
 
         mThemeDark = false;
         mAccentColor = -1;
