@@ -222,8 +222,7 @@ public abstract class DayPickerView extends ListView implements OnScrollListener
             setMonthDisplayed(mTempDay);
             mPreviousScrollState = OnScrollListener.SCROLL_STATE_FLING;
             if (animate) {
-                smoothScrollToPositionFromTop(
-                        position, LIST_TOP_OFFSET, GOTO_SCROLL_DURATION);
+                smoothScrollToPosition(position);
                 return true;
             } else {
                 postSetSelection(position);
