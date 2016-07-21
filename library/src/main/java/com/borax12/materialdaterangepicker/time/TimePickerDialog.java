@@ -100,6 +100,9 @@ public class TimePickerDialog extends DialogFragment implements OnValueSelectedL
     private int mUnselectedColor;
     private String mAmText;
     private String mPmText;
+    
+    private String mIndicatorFrom = "FROM";
+    private String mIndicatorTo = "TO";
 
     private boolean mAllowAutoAdvance;
     private int mInitialHourOfDay;
@@ -193,6 +196,14 @@ public class TimePickerDialog extends DialogFragment implements OnValueSelectedL
     public String getTitle() {
         return mTitle;
     }
+    
+    /**
+     * Set tab indicators. NOTE: this will only take effect with the next onCreateView
+     */
+    public void setTabIndicators(String from, String to) {
+        mIndicatorFrom = from;
+        mIndicatorTo = to;
+    }
 
     /**
      * Set a dark or light theme. NOTE: this will only take effect for the next onCreateView.
@@ -283,11 +294,11 @@ public class TimePickerDialog extends DialogFragment implements OnValueSelectedL
         tabHost.setup();
         TabHost.TabSpec startDatePage = tabHost.newTabSpec("start");
         startDatePage.setContent(R.id.start_date_group);
-        startDatePage.setIndicator("FROM");
+        startDatePage.setIndicator(mIndicatorFrom);
 
         TabHost.TabSpec endDatePage = tabHost.newTabSpec("end");
         endDatePage.setContent(R.id.end_date_group);
-        endDatePage.setIndicator("TO");
+        endDatePage.setIndicator(mIndicatorTo);
 
         tabHost.addTab(startDatePage);
         tabHost.addTab(endDatePage);
