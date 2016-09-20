@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="mdtp_sans_serif">sans-serif</string>
+    <string name="mdtp_cancel">@android:string/cancel</string>
+    <string name="mdtp_ok">@android:string/ok</string>
+    <string name="mdtp_done_label">Feito</string>
+    <string name="mdtp_from">DE</string>
+    <string name="mdtp_to">PARA</string>
+    <string name="mdtp_select_day">Selecione o mês e o dia</string>
+    <string name="mdtp_select_hours">Selecione a hora</string>
+    <string name="mdtp_select_minutes">Selecione os minutos</string>
+    <string name="mdtp_select_year">Selecione o ano</string>
+    <string name="mdtp_year_picker_description">Lista dos anos</string>
+    <string name="mdtp_minute_picker_description">Slider circular dos minutos</string>
+    <string name="mdtp_hour_picker_description">Slider circular das horas</string>
+    <string name="mdtp_day_picker_description">Grade dos dias do mês</string>
+    <string name="mdtp_deleted_key"><xliff:g id="key" example="4">%1$s</xliff:g> deletado</string>
+    <string name="mdtp_item_is_selected"><xliff:g id="item" example="2013">%1$s</xliff:g> selecionado</string>
+</resources>
