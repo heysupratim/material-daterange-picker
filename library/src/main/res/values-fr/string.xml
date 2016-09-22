@@ -54,19 +54,6 @@
     <string name="mdtp_item_is_selected"><xliff:g id="item" example="2013">%1$s</xliff:g> sélectionné</string>
     <!-- Accessibility announcement when a number that had been typed in is deleted [CHAR_LIMIT=NONE] -->
     <string name="mdtp_deleted_key"><xliff:g id="key" example="4">%1$s</xliff:g> supprimé</string>
-
-    <!-- DO NOT TRANSLATE -->
-    <string name="mdtp_time_placeholder" translatable="false">--</string>
-    <!-- DO NOT TRANSLATE -->
-    <string name="mdtp_time_separator" translatable="false">:</string>
-
-    <!-- DO NOT TRANSLATE -->
-    <string name="mdtp_radial_numbers_typeface" translatable="false">sans-serif</string>
-    <!-- DO NOT TRANSLATE -->
-    <string name="mdtp_sans_serif" translatable="false">sans-serif</string>
-
-    <!-- DO NOT TRANSLATE -->
-    <string name="mdtp_day_of_week_label_typeface" translatable="false">sans-serif</string>
     
     <string name="mdtp_from">DU</string>
     <string name="mdtp_to">AU</string>
