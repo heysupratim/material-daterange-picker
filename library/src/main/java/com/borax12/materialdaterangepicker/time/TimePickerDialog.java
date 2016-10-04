@@ -174,7 +174,7 @@ public class TimePickerDialog extends DialogFragment implements OnValueSelectedL
     }
 
     public static TimePickerDialog newInstance(OnTimeSetListener callback,
-                                               int hourOfDay, int minute, boolean is24HourMode
+                                               int hourOfDay, int minute, boolean is24HourMode,
                                                 int hourOfDayEnd, int minuteEnd) {
         TimePickerDialog ret = new TimePickerDialog();
         ret.initialize(callback, hourOfDay, minute, is24HourMode);
