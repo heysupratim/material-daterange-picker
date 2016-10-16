@@ -912,7 +912,7 @@ public class DatePickerDialog extends DialogFragment implements
             calculateHighlightedDays();
         }
 
-        //updatePickers();
+        updatePickers();
         updateDisplay(true);
     }
 
