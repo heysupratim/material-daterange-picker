@@ -23,6 +23,7 @@ import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
@@ -100,9 +101,9 @@ public class TimePickerDialog extends DialogFragment implements OnValueSelectedL
     private int mUnselectedColor;
     private String mAmText;
     private String mPmText;
-    
-    private String mIndicatorFrom = "FROM";
-    private String mIndicatorTo = "TO";
+
+    private String mIndicatorFrom;
+    private String mIndicatorTo;
 
     private boolean mAllowAutoAdvance;
     private int mInitialHourOfDay;
@@ -319,11 +320,15 @@ public class TimePickerDialog extends DialogFragment implements OnValueSelectedL
         tabHost.setup();
         TabHost.TabSpec startDatePage = tabHost.newTabSpec("start");
         startDatePage.setContent(R.id.start_date_group);
-        startDatePage.setIndicator(mIndicatorFrom);
+        startDatePage.setIndicator(
+                TextUtils.isEmpty(mIndicatorFrom) ?
+                        getActivity().getResources().getString(R.string.mdtp_from) : mIndicatorFrom);
 
         TabHost.TabSpec endDatePage = tabHost.newTabSpec("end");
         endDatePage.setContent(R.id.end_date_group);
-        endDatePage.setIndicator(mIndicatorTo);
+        endDatePage.setIndicator(
+                TextUtils.isEmpty(mIndicatorTo) ?
+                        getActivity().getResources().getString(R.string.mdtp_to) : mIndicatorTo);
 
         tabHost.addTab(startDatePage);
         tabHost.addTab(endDatePage);
