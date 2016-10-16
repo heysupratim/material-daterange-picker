@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.wdullaer.materialdatetimepicker.MainActivity"
+    tools:context="com.borax12.materialdaterangepickerexample.MainActivity"
     android:gravity="center_vertical|center_horizontal">
 
         <Button
@@ -36,5 +36,12 @@
         android:layout_height="wrap_content"
         android:text="@string/selected_time"
         android:layout_marginTop="10dp" />
+
+    <CheckBox
+        android:id="@+id/autohighlight_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/auto_highlight_selected_date_span"
+        android:layout_marginTop="10dp"/>
 
 </LinearLayout>
