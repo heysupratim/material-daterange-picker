@@ -109,4 +109,4 @@ For other documentation regarding theming , handling orientation changes , and c
 
 TODO
 ----
-1. More device config handling
+1. Custom Colors in Date and Time Picker - including indicators
