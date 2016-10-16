@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.borax12.materialdaterangepicker.date.DatePickerDialog;
@@ -19,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements
 {
     private TextView dateTextView;
     private TextView timeTextView;
-
+    private boolean mAutoHighlight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,14 @@ public class MainActivity extends AppCompatActivity implements
         Button dateButton = (Button)findViewById(R.id.date_button);
         Button timeButton = (Button)findViewById(R.id.time_button);
 
+        CheckBox ahl = (CheckBox) findViewById(R.id.autohighlight_checkbox);
+        ahl.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                mAutoHighlight = b;
+            }
+        });
+
         // Show a datepicker when the dateButton is clicked
         dateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements
                         now.get(Calendar.MONTH),
                         now.get(Calendar.DAY_OF_MONTH)
                 );
+                dpd.setAutoHighlight(mAutoHighlight);
                 dpd.show(getFragmentManager(), "Datepickerdialog");
             }
         });

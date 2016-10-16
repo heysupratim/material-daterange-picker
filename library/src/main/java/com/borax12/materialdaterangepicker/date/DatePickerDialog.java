@@ -23,8 +23,8 @@ import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.text.format.DateUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -46,6 +46,7 @@ import com.borax12.materialdaterangepicker.Utils;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.HashSet;
 import java.util.Locale;
 
@@ -135,6 +136,7 @@ public class DatePickerDialog extends DialogFragment implements
     private Calendar mMaxDateEnd;
     private Calendar[] highlightedDaysEnd;
     private Calendar[] selectableDaysEnd;
+    private boolean mAutoHighlight = false;
 
     private boolean mThemeDark;
     private int mAccentColor = -1;
@@ -311,7 +313,6 @@ public class DatePickerDialog extends DialogFragment implements
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        Log.d(TAG, "onCreateView: ");
         getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         View view = inflater.inflate(R.layout.range_date_picker_dialog, null);
 
@@ -393,7 +394,7 @@ public class DatePickerDialog extends DialogFragment implements
         mSelectYear = res.getString(R.string.mdtp_select_year);
 
         int bgColorResource = mThemeDark ? R.color.mdtp_date_picker_view_animator_dark_theme : R.color.mdtp_date_picker_view_animator;
-        view.setBackgroundColor(activity.getResources().getColor(bgColorResource));
+        view.setBackgroundColor(ContextCompat.getColor(activity, bgColorResource));
 
         mAnimator = (com.borax12.materialdaterangepicker.date.AccessibleDateAnimator) view.findViewById(R.id.animator);
         mAnimatorEnd = (com.borax12.materialdaterangepicker.date.AccessibleDateAnimator) view.findViewById(R.id.animator_end);
@@ -493,7 +494,7 @@ public class DatePickerDialog extends DialogFragment implements
             @Override
             public void onTabChanged(String tabId) {
                 com.borax12.materialdaterangepicker.date.MonthAdapter.CalendarDay calendarDay;
-                if(tabId=="start"){
+                if(tabId.equals("start")){
                     calendarDay = new com.borax12.materialdaterangepicker.date.MonthAdapter.CalendarDay(mCalendar.getTimeInMillis());
                     mDayPickerView.goTo(calendarDay,true,true,false);
                 }
@@ -530,6 +531,31 @@ public class DatePickerDialog extends DialogFragment implements
     public void onDismiss(DialogInterface dialog) {
         super.onDismiss(dialog);
         if(mOnDismissListener != null) mOnDismissListener.onDismiss(dialog);
+    }
+
+    /**
+     * Get whether auto highlighting is turned on or not
+     * @return true if on, false otherwise
+     */
+    @SuppressWarnings("unused")
+    public boolean isAutoHighlight() {
+        return mAutoHighlight;
+    }
+
+    /**
+     * If set to true, all days between {@link #highlightedDays} and {@link #highlightedDaysEnd} will be highlighted.
+     * This will reset manually inserted days to highlight using {@link #setHighlightedDays(Calendar[], Calendar[])}
+     * @param autoHighlight Set true to turn on auto highlighting, false otherwise
+     */
+    @SuppressWarnings("unused")
+    public void setAutoHighlight(boolean autoHighlight) {
+        this.mAutoHighlight = autoHighlight;
+        if(autoHighlight) {
+            calculateHighlightedDays();
+        } else {
+            highlightedDays = null;
+            highlightedDaysEnd = null;
+        }
     }
 
     private void setCurrentView(final int viewIndex) {
@@ -766,10 +792,13 @@ public class DatePickerDialog extends DialogFragment implements
 
     /**
      * Sets an array of dates which should be highlighted when the picker is drawn
+     * This will turn off auto highlighting.
      * @param highlightedDays an Array of Calendar objects containing the dates to be highlighted
      */
     @SuppressWarnings("unused")
     public void setHighlightedDays(Calendar[] highlightedDays,Calendar[] highlightedDaysEnd) {
+        mAutoHighlight = false;
+
         // Sort the array to optimize searching over it later on
         Arrays.sort(highlightedDays);
         Arrays.sort(highlightedDaysEnd);
@@ -879,8 +908,38 @@ public class DatePickerDialog extends DialogFragment implements
             mCalendarEnd.set(Calendar.DAY_OF_MONTH, day);
         }
 
+        if(mAutoHighlight) {
+            calculateHighlightedDays();
+        }
+
         //updatePickers();
         updateDisplay(true);
+    }
+
+    private void calculateHighlightedDays() {
+        int numDays = (int)Math.round(
+                (mCalendarEnd.getTimeInMillis() - mCalendar.getTimeInMillis()) / 86400000d);
+
+        // In case user chooses an end day before the start day.
+        int dir = 1;
+        if(numDays < 0) {
+            dir = -1;
+        }
+
+        numDays = Math.abs(numDays);
+
+        // +1 to account for the end day which should be highlighted as well
+        highlightedDays = new Calendar[numDays+1];
+
+        for (int i = 0; i < numDays; i++) {
+            highlightedDays[i] = new GregorianCalendar(
+                    mCalendar.get(Calendar.YEAR),
+                    mCalendar.get(Calendar.MONTH),
+                    mCalendar.get(Calendar.DAY_OF_MONTH));
+            highlightedDays[i].add(Calendar.DAY_OF_MONTH, i*dir);
+        }
+        highlightedDays[numDays] = mCalendarEnd;
+        highlightedDaysEnd = highlightedDays;
     }
 
     private void updatePickers() {

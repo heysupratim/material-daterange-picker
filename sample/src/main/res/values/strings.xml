@@ -8,5 +8,6 @@
     <string name="pick_time">Pick Time</string>
     <string name="pick_date">Pick Date</string>
     <string name="action_settings">Settings</string>
+    <string name="auto_highlight_selected_date_span">Auto highlight selected date span</string>
 
 </resources>
