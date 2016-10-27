@@ -27,7 +27,7 @@ dependencies {
 
 ##Update
 --added highlighted range selection method
---added brazilian translation
+--added portuguese translation
 --add end time selection in TimePicker
 
 ##Date Selection
