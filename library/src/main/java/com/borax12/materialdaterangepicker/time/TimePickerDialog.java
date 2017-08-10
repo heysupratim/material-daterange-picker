@@ -152,8 +152,9 @@ public class TimePickerDialog extends DialogFragment implements OnValueSelectedL
          * @param view The view associated with this listener.
          * @param hourOfDay The hour that was set.
          * @param minute The minute that was set.
+         * @return boolean Returns true if dialog needs to be dismissed.
          */
-        void onTimeSet(RadialPickerLayout view, int hourOfDay, int minute, int hourOfDayEnd, int minuteEnd);
+        boolean onTimeSet(RadialPickerLayout view, int hourOfDay, int minute, int hourOfDayEnd, int minuteEnd);
     }
 
     public TimePickerDialog() {

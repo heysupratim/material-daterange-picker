@@ -171,13 +171,16 @@ public class DatePickerDialog extends DialogFragment implements
     public interface OnDateSetListener {
 
         /**
+         * Note: Returning boolean allows developer to check date range
+         *
          * @param view The view associated with this listener.
          * @param year The year that was set.
          * @param monthOfYear The month that was set (0-11) for compatibility
          *            with {@link java.util.Calendar}.
          * @param dayOfMonth The day of the month that was set.
+         * @return boolean Returns true if dialog should be dismissed
          */
-        void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth,int yearEnd, int monthOfYearEnd, int dayOfMonthEnd);
+        boolean onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth,int yearEnd, int monthOfYearEnd, int dayOfMonthEnd);
     }
 
     /**
@@ -429,12 +432,15 @@ public class DatePickerDialog extends DialogFragment implements
             @Override
             public void onClick(View v) {
                 tryVibrate();
+                boolean result = true;
                 if (mCallBack != null) {
-                    mCallBack.onDateSet(DatePickerDialog.this, mCalendar.get(Calendar.YEAR),
+                    result = mCallBack.onDateSet(DatePickerDialog.this, mCalendar.get(Calendar.YEAR),
                             mCalendar.get(Calendar.MONTH), mCalendar.get(Calendar.DAY_OF_MONTH),mCalendarEnd.get(Calendar.YEAR),
                             mCalendarEnd.get(Calendar.MONTH), mCalendarEnd.get(Calendar.DAY_OF_MONTH));
                 }
-                dismiss();
+
+                if(result)
+                    dismiss();
             }
         });
         okButton.setTypeface(TypefaceHelper.get(activity, "Roboto-Medium"));
@@ -992,16 +998,16 @@ public class DatePickerDialog extends DialogFragment implements
     }
     
     /**
-     * setStartTitle
-     * @param String the title to display for start panel
-     */ 
+     *
+     * @param startTitle the title to display for start panel
+     */
     public void setStartTitle(String startTitle) {
         this.startTitle = startTitle;
     }
     
     /**
      * setEndTitle
-     * @param String the title to display for end panel
+     * @param endTitle the title to display for end panel
      */ 
     public void setEndTitle(String endTitle) {
         this.endTitle = endTitle;
