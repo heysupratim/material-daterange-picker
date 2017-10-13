@@ -5,7 +5,7 @@
     <string name="mdtp_ok">@android:string/ok</string>
     <string name="mdtp_done_label">Feito</string>
     <string name="mdtp_from">DE</string>
-    <string name="mdtp_to">PARA</string>
+    <string name="mdtp_to">ATÉ</string>
     <string name="mdtp_select_day">Selecione o mês e o dia</string>
     <string name="mdtp_select_hours">Selecione a hora</string>
     <string name="mdtp_select_minutes">Selecione os minutos</string>
