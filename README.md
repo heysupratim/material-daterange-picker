@@ -93,6 +93,20 @@ DatePickerDialog dpd = DatePickerDialog.newInstance(
 dpd.show(getFragmentManager(), "Datepickerdialog");
 ```
 
+To set fromDate and toDate different, use another constructor like:
+
+```java
+DatePickerDialog dpd = DatePickerDialog.newInstance(
+    MainActivity.this,
+    now.get(Calendar.YEAR),
+    now.get(Calendar.MONTH),
+    now.get(Calendar.DAY_OF_MONTH),
+    nowEnd.get(Calendar.YEAR),
+    nowEnd.get(Calendar.MONTH),
+    nowEnd.get(Calendar.DAY_OF_MONTH)
+);
+```
+
 ### Create a TimePickerDialog` using the supplied factory
 You will need to create a new instance of `TimePickerDialog` using the static `newInstance()` method, supplying proper default values and a callback. Once the dialogs are configured, you can call `show()`.
 ```java
