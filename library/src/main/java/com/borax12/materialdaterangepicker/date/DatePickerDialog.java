@@ -19,6 +19,7 @@ package com.borax12.materialdaterangepicker.date;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.DialogFragment;
+import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -39,6 +40,7 @@ import android.widget.TabHost;
 import android.widget.TextView;
 
 import com.borax12.materialdaterangepicker.HapticFeedbackController;
+import com.borax12.materialdaterangepicker.PeriodTab;
 import com.borax12.materialdaterangepicker.R;
 import com.borax12.materialdaterangepicker.TypefaceHelper;
 import com.borax12.materialdaterangepicker.Utils;
@@ -164,6 +166,7 @@ public class DatePickerDialog extends DialogFragment implements
     private int tabTag=1;
     private String startTitle;
     private String endTitle;
+    private PeriodTab currentPeriodTab;
 
     /**
      * The callback used to indicate the user is done filling in the date.
@@ -332,6 +335,7 @@ public class DatePickerDialog extends DialogFragment implements
 
         tabHost.addTab(startDatePage);
         tabHost.addTab(endDatePage);
+        tabHost.setCurrentTab(currentPeriodTab == null ? 0 : currentPeriodTab.getValue());
 
         mDayOfWeekView = (TextView) view.findViewById(R.id.date_picker_header);
         mMonthAndDayView = (LinearLayout) view.findViewById(R.id.date_picker_month_and_day);
@@ -964,6 +968,11 @@ public class DatePickerDialog extends DialogFragment implements
         return mMinDate != null && mMinDate.get(Calendar.YEAR) > mMinYear ? mMinDate.get(Calendar.YEAR) : mMinYear;
     }
 
+    public void showOn(FragmentManager fragmentManager, String tag, PeriodTab periodTab) {
+        currentPeriodTab = periodTab;
+        show(fragmentManager, tag);
+    }
+
     @Override
     public int getMaxYear() {
         if(selectableDays != null) return selectableDays[selectableDays.length-1].get(Calendar.YEAR);
@@ -993,7 +1002,7 @@ public class DatePickerDialog extends DialogFragment implements
     
     /**
      * setStartTitle
-     * @param String the title to display for start panel
+     * @param startTitle the title to display for start panel
      */ 
     public void setStartTitle(String startTitle) {
         this.startTitle = startTitle;
@@ -1001,7 +1010,7 @@ public class DatePickerDialog extends DialogFragment implements
     
     /**
      * setEndTitle
-     * @param String the title to display for end panel
+     * @param endTitle the title to display for end panel
      */ 
     public void setEndTitle(String endTitle) {
         this.endTitle = endTitle;

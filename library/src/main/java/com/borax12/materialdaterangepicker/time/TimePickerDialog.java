@@ -19,6 +19,7 @@ package com.borax12.materialdaterangepicker.time;
 import android.animation.ObjectAnimator;
 import android.app.ActionBar.LayoutParams;
 import android.app.DialogFragment;
+import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -42,6 +43,7 @@ import com.borax12.materialdaterangepicker.HapticFeedbackController;
 import com.borax12.materialdaterangepicker.R;
 import com.borax12.materialdaterangepicker.TypefaceHelper;
 import com.borax12.materialdaterangepicker.Utils;
+import com.borax12.materialdaterangepicker.PeriodTab;
 import com.borax12.materialdaterangepicker.time.RadialPickerLayout.OnValueSelectedListener;
 
 import java.text.DateFormatSymbols;
@@ -140,7 +142,12 @@ public class TimePickerDialog extends DialogFragment implements OnValueSelectedL
     private TextView mAmPmTextViewEnd;
     private RadialPickerLayout mTimePickerEnd;
     private View mAmPmHitspaceEnd;
+    private PeriodTab currentPeriodTab;
 
+    public void showOn(FragmentManager fragmentManager, String tag, PeriodTab periodTab) {
+        currentPeriodTab = periodTab;
+        show(fragmentManager, tag);
+    }
 
     /**
      * The callback interface used to indicate the user is done filling in
@@ -332,6 +339,7 @@ public class TimePickerDialog extends DialogFragment implements OnValueSelectedL
 
         tabHost.addTab(startDatePage);
         tabHost.addTab(endDatePage);
+        tabHost.setCurrentTab(currentPeriodTab == null ? 0 : currentPeriodTab.getValue());
 
         mHourView = (TextView) view.findViewById(R.id.hours);
         mHourView.setOnKeyListener(keyboardListener);
