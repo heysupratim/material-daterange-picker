@@ -165,6 +165,9 @@ public class DatePickerDialog extends DialogFragment implements
     private String startTitle;
     private String endTitle;
 
+    //click on OK from 'FROM' tab takes you to 'TO' tab if true
+    private boolean isPressOKMovesToTOTab;
+
     /**
      * The callback used to indicate the user is done filling in the date.
      */
@@ -428,13 +431,17 @@ public class DatePickerDialog extends DialogFragment implements
 
             @Override
             public void onClick(View v) {
-                tryVibrate();
-                if (mCallBack != null) {
-                    mCallBack.onDateSet(DatePickerDialog.this, mCalendar.get(Calendar.YEAR),
-                            mCalendar.get(Calendar.MONTH), mCalendar.get(Calendar.DAY_OF_MONTH),mCalendarEnd.get(Calendar.YEAR),
-                            mCalendarEnd.get(Calendar.MONTH), mCalendarEnd.get(Calendar.DAY_OF_MONTH));
+                if(tabHost.getCurrentTabTag().equals("start") && isPressOKMovesToTOTab){
+                    tabHost.setCurrentTabByTag("end");
+                }else {
+                    tryVibrate();
+                    if (mCallBack != null) {
+                        mCallBack.onDateSet(DatePickerDialog.this, mCalendar.get(Calendar.YEAR),
+                                mCalendar.get(Calendar.MONTH), mCalendar.get(Calendar.DAY_OF_MONTH), mCalendarEnd.get(Calendar.YEAR),
+                                mCalendarEnd.get(Calendar.MONTH), mCalendarEnd.get(Calendar.DAY_OF_MONTH));
+                    }
+                    dismiss();
                 }
-                dismiss();
             }
         });
         okButton.setTypeface(TypefaceHelper.get(activity, "Roboto-Medium"));
@@ -1006,4 +1013,21 @@ public class DatePickerDialog extends DialogFragment implements
     public void setEndTitle(String endTitle) {
         this.endTitle = endTitle;
     }
+
+    /**
+     * isPressOKMovesToTOTab
+     * @return boolean to let you know if pressing ok in 'from' tab moves control to 'to' tab
+     */
+    public boolean isPressOKMovesToTOTab() {
+        return isPressOKMovesToTOTab;
+    }
+
+    /**
+     * setPressOKMovesToTOTab
+     * @param pressOKMovesToTOTab to make dialog go from 'FROM' tab to 'TO' tab after 'OK' is clicked
+     */
+    public void setPressOKMovesToTOTab(boolean pressOKMovesToTOTab) {
+        isPressOKMovesToTOTab = pressOKMovesToTOTab;
+    }
+
 }

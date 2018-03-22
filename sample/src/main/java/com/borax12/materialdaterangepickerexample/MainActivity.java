@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements
                         now.get(Calendar.MONTH),
                         now.get(Calendar.DAY_OF_MONTH)
                 );
+                dpd.setPressOKMovesToTOTab(true);
                 dpd.setAutoHighlight(mAutoHighlight);
                 dpd.show(getFragmentManager(), "Datepickerdialog");
             }
