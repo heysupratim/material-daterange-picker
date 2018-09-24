@@ -14,47 +14,47 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Label for button to confirm chosen date or time [CHAR LIMIT=30] -->
-    <string name="mdtp_done_label">Terminé</string>
-    <string name="mdtp_ok">@android:string/ok</string>
-    <string name="mdtp_cancel">@android:string/cancel</string>
+    <string name="range_done_label">Terminé</string>
+    <string name="range_ok">@android:string/ok</string>
+    <string name="range_cancel">@android:string/cancel</string>
     <!--
          Content description for the hour selector in the time picker, which displays
          selectable hours of the day along the inside edge of a circle, as in an analog clock.
          [CHAR LIMIT=50]
     -->
-    <string name="mdtp_hour_picker_description">Slider circulaire des heures</string>
+    <string name="range_hour_picker_description">Slider circulaire des heures</string>
     <!--
          Content description for the minute selector in the time picker, which displays
          selectable five-minute intervals along the inside edge of a circle, as in an analog clock.
          [CHAR LIMIT=50]
     -->
-    <string name="mdtp_minute_picker_description">Slider circulaire des minutes</string>
+    <string name="range_minute_picker_description">Slider circulaire des minutes</string>
     <!-- Accessibility announcement for hour circular picker [CHAR LIMIT=NONE] -->
-    <string name="mdtp_select_hours">Sélectionnez les heures</string>
+    <string name="range_select_hours">Sélectionnez les heures</string>
     <!-- Accessibility announcement for minute circular picker [CHAR LIMIT=NONE] -->
-    <string name="mdtp_select_minutes">Sélectionnez les minutes</string>
+    <string name="range_select_minutes">Sélectionnez les minutes</string>
 
     <!--
         Content description for the month and day selector in the date picker, which displays
         a selectable grid of days laid out by month.
         [CHAR LIMIT=50]
      -->
-    <string name="mdtp_day_picker_description">Grille des jours par mois</string>
+    <string name="range_day_picker_description">Grille des jours par mois</string>
     <!--
         Content description for the year selector in the date picker, which displays
         a scrolling, vertical list of years.
         [CHAR LIMIT=50]
      -->
-    <string name="mdtp_year_picker_description">Liste des années</string>
+    <string name="range_year_picker_description">Liste des années</string>
     <!-- Accessibility announcement for the day picker [CHAR LIMIT=NONE] -->
-    <string name="mdtp_select_day">Sélectionnez un mois et un jour</string>
+    <string name="range_select_day">Sélectionnez un mois et un jour</string>
     <!-- Accessibility announcement for the year picker [CHAR LIMIT=NONE] -->
-    <string name="mdtp_select_year">Sélectionnez une année</string>
+    <string name="range_select_year">Sélectionnez une année</string>
     <!-- Accessibility description for the item that is currently selected. -->
-    <string name="mdtp_item_is_selected"><xliff:g id="item" example="2013">%1$s</xliff:g> sélectionné</string>
+    <string name="range_item_is_selected"><xliff:g id="item" example="2013">%1$s</xliff:g> sélectionné</string>
     <!-- Accessibility announcement when a number that had been typed in is deleted [CHAR_LIMIT=NONE] -->
-    <string name="mdtp_deleted_key"><xliff:g id="key" example="4">%1$s</xliff:g> supprimé</string>
+    <string name="range_deleted_key"><xliff:g id="key" example="4">%1$s</xliff:g> supprimé</string>
     
-    <string name="mdtp_from">DU</string>
-    <string name="mdtp_to">AU</string>
+    <string name="range_from">DU</string>
+    <string name="range_to">AU</string>
 </resources>

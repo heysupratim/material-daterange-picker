@@ -48,9 +48,9 @@ public class TextViewWithCircularIndicator extends TextView {
     public TextViewWithCircularIndicator(Context context, AttributeSet attrs) {
         super(context, attrs);
         Resources res = context.getResources();
-        mCircleColor = res.getColor(R.color.mdtp_accent_color);
-        mRadius = res.getDimensionPixelOffset(R.dimen.mdtp_month_select_circle_radius);
-        mItemIsSelectedText = context.getResources().getString(R.string.mdtp_item_is_selected);
+        mCircleColor = res.getColor(R.color.range_accent_color);
+        mRadius = res.getDimensionPixelOffset(R.dimen.range_month_select_circle_radius);
+        mItemIsSelectedText = context.getResources().getString(R.string.range_item_is_selected);
 
         init();
     }
@@ -71,7 +71,7 @@ public class TextViewWithCircularIndicator extends TextView {
     }
 
     /**
-     * Programmatically set the color state list (see mdtp_date_picker_year_selector)
+     * Programmatically set the color state list (see range_date_picker_year_selector)
      * @param accentColor pressed state text color
      * @return ColorStateList with pressed state
      */

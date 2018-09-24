@@ -15,9 +15,9 @@
 -->
 <com.borax12.materialdaterangepicker.date.AccessibleDateAnimator
      xmlns:android="http://schemas.android.com/apk/res/android"
-     android:id="@+id/animator"
-     android:layout_width="@dimen/mdtp_date_picker_component_width"
-     android:layout_height="@dimen/mdtp_date_picker_view_animator_height"
+     android:id="@+id/range_animator"
+     android:layout_width="@dimen/range_date_picker_component_width"
+     android:layout_height="@dimen/range_date_picker_view_animator_height"
      android:gravity="center"
      android:paddingLeft="8dp"
      android:paddingRight="8dp" />

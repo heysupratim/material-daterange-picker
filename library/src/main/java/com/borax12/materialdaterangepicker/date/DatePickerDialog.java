@@ -316,37 +316,37 @@ public class DatePickerDialog extends DialogFragment implements
         getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         View view = inflater.inflate(R.layout.range_date_picker_dialog, null);
 
-        tabHost = (TabHost) view.findViewById(R.id.tabHost);
-        tabHost.findViewById(R.id.tabHost);
+        tabHost = (TabHost) view.findViewById(R.id.range_tabHost);
+        tabHost.findViewById(R.id.range_tabHost);
         tabHost.setup();
 
         final Activity activity = getActivity();
 
         TabHost.TabSpec startDatePage = tabHost.newTabSpec("start");
         startDatePage.setContent(R.id.start_date_group);
-        startDatePage.setIndicator((startTitle != null && !startTitle.isEmpty()) ? startTitle : activity.getResources().getString(R.string.mdtp_from));
+        startDatePage.setIndicator((startTitle != null && !startTitle.isEmpty()) ? startTitle : activity.getResources().getString(R.string.range_from));
 
         TabHost.TabSpec endDatePage = tabHost.newTabSpec("end");
-        endDatePage.setContent(R.id.end_date_group);
-        endDatePage.setIndicator((endTitle!=null&&!endTitle.isEmpty())?endTitle:activity.getResources().getString(R.string.mdtp_to));
+        endDatePage.setContent(R.id.range_end_date_group);
+        endDatePage.setIndicator((endTitle!=null&&!endTitle.isEmpty())?endTitle:activity.getResources().getString(R.string.range_to));
 
         tabHost.addTab(startDatePage);
         tabHost.addTab(endDatePage);
 
-        mDayOfWeekView = (TextView) view.findViewById(R.id.date_picker_header);
-        mMonthAndDayView = (LinearLayout) view.findViewById(R.id.date_picker_month_and_day);
-        mMonthAndDayViewEnd = (LinearLayout) view.findViewById(R.id.date_picker_month_and_day_end);
+        mDayOfWeekView = (TextView) view.findViewById(R.id.range_date_picker_header);
+        mMonthAndDayView = (LinearLayout) view.findViewById(R.id.range_date_picker_month_and_day);
+        mMonthAndDayViewEnd = (LinearLayout) view.findViewById(R.id.range_date_picker_month_and_day_end);
         mMonthAndDayView.setOnClickListener(this);
         mMonthAndDayViewEnd.setOnClickListener(this);
 
-        mSelectedMonthTextView = (TextView) view.findViewById(R.id.date_picker_month);
-        mSelectedMonthTextViewEnd = (TextView) view.findViewById(R.id.date_picker_month_end);
+        mSelectedMonthTextView = (TextView) view.findViewById(R.id.range_date_picker_month);
+        mSelectedMonthTextViewEnd = (TextView) view.findViewById(R.id.range_date_picker_month_end);
 
-        mSelectedDayTextView = (TextView) view.findViewById(R.id.date_picker_day);
-        mSelectedDayTextViewEnd = (TextView) view.findViewById(R.id.date_picker_day_end);
+        mSelectedDayTextView = (TextView) view.findViewById(R.id.range_date_picker_day);
+        mSelectedDayTextViewEnd = (TextView) view.findViewById(R.id.range_date_picker_day_end);
 
-        mYearView = (TextView) view.findViewById(R.id.date_picker_year);
-        mYearViewEnd = (TextView) view.findViewById(R.id.date_picker_year_end);
+        mYearView = (TextView) view.findViewById(R.id.range_date_picker_year);
+        mYearViewEnd = (TextView) view.findViewById(R.id.range_date_picker_year_end);
         mYearView.setOnClickListener(this);
         mYearViewEnd.setOnClickListener(this);
 
@@ -388,16 +388,16 @@ public class DatePickerDialog extends DialogFragment implements
 
 
         Resources res = getResources();
-        mDayPickerDescription = res.getString(R.string.mdtp_day_picker_description);
-        mSelectDay = res.getString(R.string.mdtp_select_day);
-        mYearPickerDescription = res.getString(R.string.mdtp_year_picker_description);
-        mSelectYear = res.getString(R.string.mdtp_select_year);
+        mDayPickerDescription = res.getString(R.string.range_day_picker_description);
+        mSelectDay = res.getString(R.string.range_select_day);
+        mYearPickerDescription = res.getString(R.string.range_year_picker_description);
+        mSelectYear = res.getString(R.string.range_select_year);
 
-        int bgColorResource = mThemeDark ? R.color.mdtp_date_picker_view_animator_dark_theme : R.color.mdtp_date_picker_view_animator;
+        int bgColorResource = mThemeDark ? R.color.range_date_picker_view_animator_dark_theme : R.color.range_date_picker_view_animator;
         view.setBackgroundColor(ContextCompat.getColor(activity, bgColorResource));
 
-        mAnimator = (com.borax12.materialdaterangepicker.date.AccessibleDateAnimator) view.findViewById(R.id.animator);
-        mAnimatorEnd = (com.borax12.materialdaterangepicker.date.AccessibleDateAnimator) view.findViewById(R.id.animator_end);
+        mAnimator = (com.borax12.materialdaterangepicker.date.AccessibleDateAnimator) view.findViewById(R.id.range_animator);
+        mAnimatorEnd = (com.borax12.materialdaterangepicker.date.AccessibleDateAnimator) view.findViewById(R.id.range_animator_end);
 
         mAnimator.addView(mDayPickerView);
         mAnimator.addView(mYearPickerView);
@@ -423,7 +423,7 @@ public class DatePickerDialog extends DialogFragment implements
         animation2End.setDuration(ANIMATION_DURATION);
         mAnimatorEnd.setOutAnimation(animation2);
 
-        Button okButton = (Button) view.findViewById(R.id.ok);
+        Button okButton = (Button) view.findViewById(R.id.range_ok);
         okButton.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -439,7 +439,7 @@ public class DatePickerDialog extends DialogFragment implements
         });
         okButton.setTypeface(TypefaceHelper.get(activity, "Roboto-Medium"));
 
-        Button cancelButton = (Button) view.findViewById(R.id.cancel);
+        Button cancelButton = (Button) view.findViewById(R.id.range_cancel);
         cancelButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -459,8 +459,8 @@ public class DatePickerDialog extends DialogFragment implements
         }
         if (mAccentColor != -1) {
             if(mDayOfWeekView != null) mDayOfWeekView.setBackgroundColor(Utils.darkenColor(mAccentColor));
-            view.findViewById(R.id.day_picker_selected_date_layout).setBackgroundColor(mAccentColor);
-            view.findViewById(R.id.day_picker_selected_date_layout_end).setBackgroundColor(mAccentColor);
+            view.findViewById(R.id.range_day_picker_selected_date_layout).setBackgroundColor(mAccentColor);
+            view.findViewById(R.id.range_day_picker_selected_date_layout_end).setBackgroundColor(mAccentColor);
             okButton.setTextColor(mAccentColor);
             cancelButton.setTextColor(mAccentColor);
             mYearPickerView.setAccentColor(mAccentColor);
@@ -872,9 +872,9 @@ public class DatePickerDialog extends DialogFragment implements
     @Override
     public void onClick(View v) {
         tryVibrate();
-        if (v.getId() == R.id.date_picker_year||v.getId() == R.id.date_picker_year_end) {
+        if (v.getId() == R.id.range_date_picker_year ||v.getId() == R.id.range_date_picker_year_end) {
             setCurrentView(YEAR_VIEW);
-        } else if (v.getId() == R.id.date_picker_month_and_day||v.getId() == R.id.date_picker_month_and_day_end) {
+        } else if (v.getId() == R.id.range_date_picker_month_and_day ||v.getId() == R.id.range_date_picker_month_and_day_end) {
             setCurrentView(MONTH_AND_DAY_VIEW);
         }
     }

@@ -16,15 +16,15 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Style for dialog labels. -->
-    <style name="mdtp_time_label_thin">
+    <style name="range_time_label_thin">
         <item name="android:fontFamily">sans-serif-light</item>
     </style>
 
-    <style name="mdtp_done_button_light">
+    <style name="range_done_button_light">
         <item name="android:fontFamily">sans-serif-light</item>
     </style>
 
-    <style name="mdtp_day_of_week_label_condensed">
+    <style name="range_day_of_week_label_condensed">
         <item name="android:fontFamily">sans-serif-condensed</item>
     </style>
 </resources>
