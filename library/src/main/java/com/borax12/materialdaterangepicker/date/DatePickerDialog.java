@@ -993,7 +993,7 @@ public class DatePickerDialog extends DialogFragment implements
     
     /**
      * setStartTitle
-     * @param String the title to display for start panel
+     * @param startTitle the title to display for start panel
      */ 
     public void setStartTitle(String startTitle) {
         this.startTitle = startTitle;
@@ -1001,7 +1001,7 @@ public class DatePickerDialog extends DialogFragment implements
     
     /**
      * setEndTitle
-     * @param String the title to display for end panel
+     * @param endTitle the title to display for end panel
      */ 
     public void setEndTitle(String endTitle) {
         this.endTitle = endTitle;
