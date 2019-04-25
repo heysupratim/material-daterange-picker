@@ -5,7 +5,9 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.database.ContentObserver;
 import android.net.Uri;
+import android.os.Build;
 import android.os.SystemClock;
+import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.provider.Settings;
 
@@ -14,7 +16,7 @@ import android.provider.Settings;
  */
 public class HapticFeedbackController {
     private static final int VIBRATE_DELAY_MS = 125;
-    private static final int VIBRATE_LENGTH_MS = 50;
+    private static final int VIBRATE_LENGTH_MS = 30;
 
     private static boolean checkGlobalSetting(Context context) {
         return Settings.System.getInt(context.getContentResolver(),
@@ -81,7 +83,11 @@ public class HapticFeedbackController {
             long now = SystemClock.uptimeMillis();
             // We want to try to vibrate each individual tick discretely.
             if (now - mLastVibrate >= VIBRATE_DELAY_MS) {
-                mVibrator.vibrate(VIBRATE_LENGTH_MS);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    mVibrator.vibrate(VibrationEffect.createOneShot(VIBRATE_LENGTH_MS, VibrationEffect.DEFAULT_AMPLITUDE));
+                } else {
+                    mVibrator.vibrate(VIBRATE_LENGTH_MS);
+                }
                 mLastVibrate = now;
             }
         }

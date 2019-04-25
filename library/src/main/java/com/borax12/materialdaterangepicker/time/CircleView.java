@@ -23,6 +23,8 @@ import android.graphics.Paint;
 import android.util.Log;
 import android.view.View;
 
+import androidx.core.content.ContextCompat;
+
 import com.borax12.materialdaterangepicker.R;
 
 /**
@@ -47,9 +49,8 @@ public class CircleView extends View {
     public CircleView(Context context) {
         super(context);
 
-        Resources res = context.getResources();
-        mCircleColor = res.getColor(R.color.range_circle_color);
-        mDotColor = res.getColor(R.color.range_accent_color);
+        mCircleColor = ContextCompat.getColor(context, R.color.range_circle_color);
+        mDotColor = ContextCompat.getColor(context, R.color.range_accent_color);
         mPaint.setAntiAlias(true);
 
         mIsInitialized = false;
@@ -79,9 +80,9 @@ public class CircleView extends View {
     /* package */ void setTheme(Context context, boolean dark) {
         Resources res = context.getResources();
         if (dark) {
-            mCircleColor = res.getColor(R.color.range_circle_background_dark_theme);
+            mCircleColor = ContextCompat.getColor(context, R.color.range_circle_background_dark_theme);
         } else {
-            mCircleColor = res.getColor(R.color.range_circle_color);
+            mCircleColor = ContextCompat.getColor(context, R.color.range_circle_color);
         }
     }
 
