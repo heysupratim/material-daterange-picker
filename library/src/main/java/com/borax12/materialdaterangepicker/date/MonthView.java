@@ -623,12 +623,8 @@ public abstract class MonthView extends View {
 
         if (isBeforeMin(year, month, day)) {
             return true;
-        }
-        else if (isAfterMax(year, month, day)) {
-            return true;
-        }
+        } else return isAfterMax(year, month, day);
 
-        return false;
     }
 
     private boolean isSelectable(int year, int month, int day) {
