@@ -5,7 +5,7 @@
     <string name="range_ok">@android:string/ok</string>
     <string name="range_done_label">Feito</string>
     <string name="range_from">DE</string>
-    <string name="range_to">PARA</string>
+    <string name="range_to">ATÉ</string>
     <string name="range_select_day">Selecione o mês e o dia</string>
     <string name="range_select_hours">Selecione a hora</string>
     <string name="range_select_minutes">Selecione os minutos</string>
