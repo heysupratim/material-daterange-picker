@@ -17,17 +17,15 @@
 */
 -->
 
-<resources
-    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
-    <dimen name="mdtp_dialog_height">200dip</dimen>
-    <dimen name="mdtp_left_side_width">200dip</dimen>
+<resources>
+    <dimen name="range_dialog_height">200dip</dimen>
+    <dimen name="range_left_side_width">200dip</dimen>
 
-    <dimen name="mdtp_selected_date_year_size">30dp</dimen>
-    <dimen name="mdtp_selected_date_day_size">100dp</dimen>
-    <dimen name="mdtp_selected_date_month_size">30dp</dimen>
+    <dimen name="range_selected_date_year_size">30dp</dimen>
+    <dimen name="range_selected_date_day_size">100dp</dimen>
+    <dimen name="range_selected_date_month_size">30dp</dimen>
 
-    <dimen name="mdtp_picker_dimen">200dip</dimen>
-    <dimen name="mdtp_time_picker_height">200dip</dimen>
-    <dimen name="mdtp_header_height">70dip</dimen>
+    <dimen name="range_picker_dimen">200dip</dimen>
+    <dimen name="range_time_picker_height">200dip</dimen>
+    <dimen name="range_header_height">70dip</dimen>
 </resources>

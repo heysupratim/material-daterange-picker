@@ -17,59 +17,59 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/day_picker_selected_date_layout_end"
-    android:layout_width="@dimen/mdtp_date_picker_component_width"
+    android:id="@+id/range_day_picker_selected_date_layout"
+    android:layout_width="@dimen/range_date_picker_component_width"
     android:layout_height="wrap_content"
     android:padding="20dp"
     android:layout_weight="1"
-    android:background="@color/mdtp_accent_color"
+    android:background="@color/range_accent_color"
     android:gravity="center"
     android:orientation="vertical">
 
     <com.borax12.materialdaterangepicker.AccessibleLinearLayout
-        android:id="@+id/date_picker_month_and_day_end"
+        android:id="@+id/range_date_picker_month_and_day"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:clickable="true"
         android:orientation="horizontal"
-        android:textColor="@color/mdtp_date_picker_selector"
+        android:textColor="@color/range_date_picker_selector"
         android:gravity="center">
 
         <TextView
-            android:id="@+id/date_picker_month_end"
+            android:id="@+id/range_date_picker_month"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:duplicateParentState="true"
             android:gravity="center_horizontal|bottom"
             android:includeFontPadding="false"
-            android:textColor="@color/mdtp_date_picker_selector"
+            android:textColor="@color/range_date_picker_selector"
             android:textSize="25sp"
             tools:text="May"/>
 
         <TextView
-            android:id="@+id/date_picker_day_end"
+            android:id="@+id/range_date_picker_day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:duplicateParentState="true"
             android:gravity="center"
             android:includeFontPadding="false"
-            android:textColor="@color/mdtp_date_picker_selector"
+            android:textColor="@color/range_date_picker_selector"
             android:textSize="25sp"
             android:layout_marginLeft="8dp"
             tools:text="15"/>
     </com.borax12.materialdaterangepicker.AccessibleLinearLayout>
 
     <com.borax12.materialdaterangepicker.AccessibleTextView
-        android:id="@+id/date_picker_year_end"
+        android:id="@+id/range_date_picker_year"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center_horizontal|top"
         android:includeFontPadding="false"
-        android:textColor="@color/mdtp_date_picker_selector"
-        android:textSize="@dimen/mdtp_selected_date_year_size"
+        android:textColor="@color/range_date_picker_selector"
+        android:textSize="@dimen/range_selected_date_year_size"
         tools:text="2015" />
 
 </LinearLayout>

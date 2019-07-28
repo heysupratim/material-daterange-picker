@@ -16,50 +16,50 @@
 -->
 <resources>
 
-    <color name="mdtp_white">#ffffff</color>
-    <color name="mdtp_background_color">@color/mdtp_white</color>
-    <color name="mdtp_circle_background">@color/mdtp_background_color</color>
-    <color name="mdtp_circle_color">#f5f5f5</color>
-    <color name="mdtp_line_background">#cccccc</color>
-    <color name="mdtp_ampm_text_color">@color/mdtp_numbers_text_color</color>
-    <color name="mdtp_done_text_color_normal">#ff212121</color>
-    <color name="mdtp_done_text_color_disabled">#cccccc</color>
-    <color name="mdtp_numbers_text_color">#ff212121</color>
+    <color name="range_white">#ffffff</color>
+    <color name="range_background_color">@color/range_white</color>
+    <color name="range_circle_background">@color/range_background_color</color>
+    <color name="range_circle_color">#f5f5f5</color>
+    <color name="range_line_background">#cccccc</color>
+    <color name="range_ampm_text_color">@color/range_numbers_text_color</color>
+    <color name="range_done_text_color_normal">#ff212121</color>
+    <color name="range_done_text_color_disabled">#cccccc</color>
+    <color name="range_numbers_text_color">#ff212121</color>
 
-    <color name="mdtp_transparent_black">#7f000000</color>
-    <color name="mdtp_accent_color">#009688</color>
-    <color name="mdtp_accent_color_focused">#76ffffff</color>
-    <color name="mdtp_neutral_pressed">#33999999</color>
-    <color name="mdtp_accent_color_dark">#00796b</color>
-    <color name="mdtp_date_picker_text_normal">#ff212121</color>
-    <color name="mdtp_date_picker_text_highlighted">@color/mdtp_date_picker_text_normal</color>
-    <color name="mdtp_date_picker_text_disabled">#ccc</color>
-    <color name="mdtp_date_picker_month_day">#767676</color>
+    <color name="range_transparent_black">#7f000000</color>
+    <color name="range_accent_color">#009688</color>
+    <color name="range_accent_color_focused">#76ffffff</color>
+    <color name="range_neutral_pressed">#33999999</color>
+    <color name="range_accent_color_dark">#00796b</color>
+    <color name="range_date_picker_text_normal">#ff212121</color>
+    <color name="range_date_picker_text_highlighted">@color/range_date_picker_text_normal</color>
+    <color name="range_date_picker_text_disabled">#ccc</color>
+    <color name="range_date_picker_month_day">#767676</color>
 
     <!-- DatePicker Dark Theme -->
-    <color name="mdtp_date_picker_view_animator_dark_theme">@color/mdtp_light_gray</color>
-    <color name="mdtp_date_picker_text_normal_dark_theme">@color/mdtp_white</color>
-    <color name="mdtp_date_picker_month_day_dark_theme">#b4b4b4</color>
-    <color name="mdtp_date_picker_text_disabled_dark_theme">#767676</color>
-    <color name="mdtp_date_picker_text_highlighted_dark_theme">@color/mdtp_date_picker_text_normal_dark_theme</color>
+    <color name="range_date_picker_view_animator_dark_theme">@color/range_light_gray</color>
+    <color name="range_date_picker_text_normal_dark_theme">@color/range_white</color>
+    <color name="range_date_picker_month_day_dark_theme">#b4b4b4</color>
+    <color name="range_date_picker_text_disabled_dark_theme">#767676</color>
+    <color name="range_date_picker_text_highlighted_dark_theme">@color/range_date_picker_text_normal_dark_theme</color>
 
-    <color name="mdtp_calendar_header">@color/mdtp_accent_color_dark</color>
-    <color name="mdtp_date_picker_view_animator">@android:color/white</color>
-    <color name="mdtp_calendar_selected_date_text">#ffd1d2d4</color>
+    <color name="range_calendar_header">@color/range_accent_color_dark</color>
+    <color name="range_date_picker_view_animator">@android:color/white</color>
+    <color name="range_calendar_selected_date_text">#ffd1d2d4</color>
 
-    <color name="mdtp_button_color">@color/mdtp_accent_color</color>
-    <color name="mdtp_button_selected">#33969696</color>
+    <color name="range_button_color">@color/range_accent_color</color>
+    <color name="range_button_selected">#33969696</color>
 
     <!-- TimePicker Dark Theme -->
-    <color name="mdtp_circle_background_dark_theme">#525252</color>
+    <color name="range_circle_background_dark_theme">#525252</color>
 
     <!-- Colors for red theme -->
-    <color name="mdtp_red">@color/mdtp_accent_color</color>
-    <color name="mdtp_red_focused">@color/mdtp_accent_color_dark</color>
-    <color name="mdtp_light_gray">#424242</color>
-    <color name="mdtp_dark_gray">#323232</color>
-    <color name="mdtp_line_dark">#808080</color>
-    <color name="mdtp_done_text_color_dark_normal">#ffffff</color>
-    <color name="mdtp_done_text_color_dark_disabled">#888888</color>
-    <color name="mdtp_done_disabled_dark">#bfbfbf</color>
+    <color name="range_red">@color/range_accent_color</color>
+    <color name="range_red_focused">@color/range_accent_color_dark</color>
+    <color name="range_light_gray">#424242</color>
+    <color name="range_dark_gray">#323232</color>
+    <color name="range_line_dark">#808080</color>
+    <color name="range_done_text_color_dark_normal">#ffffff</color>
+    <color name="range_done_text_color_dark_disabled">#888888</color>
+    <color name="range_done_disabled_dark">#bfbfbf</color>
 </resources>

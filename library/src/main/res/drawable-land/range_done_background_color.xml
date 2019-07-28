@@ -16,10 +16,10 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_focused="true"
           android:state_pressed="false"
-          android:drawable="@color/mdtp_accent_color_focused" />
+          android:drawable="@color/range_accent_color_focused" />
 
     <item android:state_pressed="true"
-          android:drawable="@color/mdtp_accent_color" />
+          android:drawable="@color/range_accent_color" />
 
-    <item android:drawable="@color/mdtp_circle_background" />
+    <item android:drawable="@color/range_white" />
 </selector>
