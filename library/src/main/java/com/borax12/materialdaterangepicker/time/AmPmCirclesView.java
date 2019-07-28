@@ -25,8 +25,6 @@ import android.graphics.Typeface;
 import android.util.Log;
 import android.view.View;
 
-import androidx.core.content.ContextCompat;
-
 import com.borax12.materialdaterangepicker.R;
 import com.borax12.materialdaterangepicker.Utils;
 
@@ -79,11 +77,11 @@ public class AmPmCirclesView extends View {
         }
 
         Resources res = context.getResources();
-        mUnselectedColor = ContextCompat.getColor(context, R.color.range_white);
-        mSelectedColor = ContextCompat.getColor(context, R.color.range_accent_color);
-        mTouchedColor = ContextCompat.getColor(context, R.color.range_accent_color_dark);
-        mAmPmTextColor = ContextCompat.getColor(context, R.color.range_ampm_text_color);
-        mAmPmSelectedTextColor = ContextCompat.getColor(context, R.color.range_white);
+        mUnselectedColor = res.getColor(R.color.range_white);
+        mSelectedColor = res.getColor(R.color.range_accent_color);
+        mTouchedColor = res.getColor(R.color.range_accent_color_dark);
+        mAmPmTextColor = res.getColor(R.color.range_ampm_text_color);
+        mAmPmSelectedTextColor = res.getColor(R.color.range_white);
         mSelectedAlpha = SELECTED_ALPHA;
         String typefaceFamily = res.getString(R.string.range_sans_serif);
         Typeface tf = Typeface.create(typefaceFamily, Typeface.NORMAL);
@@ -108,14 +106,14 @@ public class AmPmCirclesView extends View {
     /* package */ void setTheme(Context context, boolean themeDark) {
         Resources res = context.getResources();
         if (themeDark) {
-            mUnselectedColor = ContextCompat.getColor(context, R.color.range_circle_background_dark_theme);
-            mSelectedColor = ContextCompat.getColor(context, R.color.range_red);
-            mAmPmTextColor = ContextCompat.getColor(context, R.color.range_white);
+            mUnselectedColor = res.getColor(R.color.range_circle_background_dark_theme);
+            mSelectedColor = res.getColor(R.color.range_red);
+            mAmPmTextColor = res.getColor(R.color.range_white);
             mSelectedAlpha = SELECTED_ALPHA_THEME_DARK;
         } else {
-            mUnselectedColor = ContextCompat.getColor(context, R.color.range_white);
-            mSelectedColor = ContextCompat.getColor(context, R.color.range_accent_color);
-            mAmPmTextColor = ContextCompat.getColor(context, R.color.range_ampm_text_color);
+            mUnselectedColor = res.getColor(R.color.range_white);
+            mSelectedColor = res.getColor(R.color.range_accent_color);
+            mAmPmTextColor = res.getColor(R.color.range_ampm_text_color);
             mSelectedAlpha = SELECTED_ALPHA;
         }
     }

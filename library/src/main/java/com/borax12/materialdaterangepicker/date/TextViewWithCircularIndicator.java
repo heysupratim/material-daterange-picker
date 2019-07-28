@@ -24,9 +24,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Paint.Align;
 import android.graphics.Paint.Style;
-import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
-
+import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
@@ -50,7 +48,7 @@ public class TextViewWithCircularIndicator extends TextView {
     public TextViewWithCircularIndicator(Context context, AttributeSet attrs) {
         super(context, attrs);
         Resources res = context.getResources();
-        mCircleColor = ContextCompat.getColor(context, R.color.range_accent_color);
+        mCircleColor = res.getColor(R.color.range_accent_color);
         mRadius = res.getDimensionPixelOffset(R.dimen.range_month_select_circle_radius);
         mItemIsSelectedText = context.getResources().getString(R.string.range_item_is_selected);
 

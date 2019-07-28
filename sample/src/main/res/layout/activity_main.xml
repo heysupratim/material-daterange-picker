@@ -44,11 +44,4 @@
         android:text="@string/auto_highlight_selected_date_span"
         android:layout_marginTop="10dp"/>
 
-    <Switch
-        android:id="@+id/night_mode_switch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Night mode"
-        android:layout_marginTop="10dp"/>
-
 </LinearLayout>

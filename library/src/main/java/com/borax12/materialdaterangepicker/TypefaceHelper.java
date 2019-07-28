@@ -3,7 +3,7 @@ package com.borax12.materialdaterangepicker;
 
 import android.content.Context;
 import android.graphics.Typeface;
-import androidx.collection.SimpleArrayMap;
+import android.support.v4.util.SimpleArrayMap;
 
 /*
     Each call to Typeface.createFromAsset will load a new instance of the typeface into memory,
