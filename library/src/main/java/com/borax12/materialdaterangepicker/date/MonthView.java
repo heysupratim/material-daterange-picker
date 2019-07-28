@@ -25,10 +25,11 @@ import android.graphics.Paint.Style;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.view.ViewCompat;
-import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
-import android.support.v4.widget.ExploreByTouchHelper;
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import androidx.customview.widget.ExploreByTouchHelper;
 import android.text.format.DateFormat;
 import android.text.format.DateUtils;
 import android.util.AttributeSet;
@@ -203,20 +204,20 @@ public abstract class MonthView extends View {
 
         boolean darkTheme = mController != null && mController.isThemeDark();
         if(darkTheme) {
-            mDayTextColor = res.getColor(R.color.range_date_picker_text_normal_dark_theme);
-            mMonthDayTextColor = res.getColor(R.color.range_date_picker_month_day_dark_theme);
-            mDisabledDayTextColor = res.getColor(R.color.range_date_picker_text_disabled_dark_theme);
-            mHighlightedDayTextColor = res.getColor(R.color.range_date_picker_text_highlighted_dark_theme);
+            mDayTextColor = ContextCompat.getColor(context, R.color.range_date_picker_text_normal_dark_theme);
+            mMonthDayTextColor = ContextCompat.getColor(context, R.color.range_date_picker_month_day_dark_theme);
+            mDisabledDayTextColor = ContextCompat.getColor(context, R.color.range_date_picker_text_disabled_dark_theme);
+            mHighlightedDayTextColor = ContextCompat.getColor(context, R.color.range_date_picker_text_highlighted_dark_theme);
         }
         else {
-            mDayTextColor = res.getColor(R.color.range_date_picker_text_normal);
-            mMonthDayTextColor = res.getColor(R.color.range_date_picker_month_day);
-            mDisabledDayTextColor = res.getColor(R.color.range_date_picker_text_disabled);
-            mHighlightedDayTextColor = res.getColor(R.color.range_date_picker_text_highlighted);
+            mDayTextColor = ContextCompat.getColor(context, R.color.range_date_picker_text_normal);
+            mMonthDayTextColor = ContextCompat.getColor(context, R.color.range_date_picker_month_day);
+            mDisabledDayTextColor = ContextCompat.getColor(context, R.color.range_date_picker_text_disabled);
+            mHighlightedDayTextColor = ContextCompat.getColor(context, R.color.range_date_picker_text_highlighted);
         }
-        mSelectedDayTextColor = res.getColor(R.color.range_white);
-        mTodayNumberColor = res.getColor(R.color.range_accent_color);
-        mMonthTitleColor = res.getColor(R.color.range_white);
+        mSelectedDayTextColor = ContextCompat.getColor(context, R.color.range_white);
+        mTodayNumberColor = ContextCompat.getColor(context, R.color.range_accent_color);
+        mMonthTitleColor = ContextCompat.getColor(context, R.color.range_white);
 
         mStringBuilder = new StringBuilder(50);
         mFormatter = new Formatter(mStringBuilder, Locale.getDefault());
@@ -622,12 +623,8 @@ public abstract class MonthView extends View {
 
         if (isBeforeMin(year, month, day)) {
             return true;
-        }
-        else if (isAfterMax(year, month, day)) {
-            return true;
-        }
+        } else return isAfterMax(year, month, day);
 
-        return false;
     }
 
     private boolean isSelectable(int year, int month, int day) {
@@ -723,7 +720,7 @@ public abstract class MonthView extends View {
      *         has focus
      */
     public CalendarDay getAccessibilityFocus() {
-        final int day = mTouchHelper.getFocusedVirtualView();
+        final int day = mTouchHelper.getAccessibilityFocusedVirtualViewId();
         if (day >= 0) {
             return new CalendarDay(mYear, mMonth, day);
         }
@@ -773,7 +770,7 @@ public abstract class MonthView extends View {
         }
 
         public void clearFocusedVirtualView() {
-            final int focusedVirtualView = getFocusedVirtualView();
+            final int focusedVirtualView = getAccessibilityFocusedVirtualViewId();
             if (focusedVirtualView != ExploreByTouchHelper.INVALID_ID) {
                 getAccessibilityNodeProvider(MonthView.this).performAction(
                         focusedVirtualView,

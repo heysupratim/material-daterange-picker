@@ -18,12 +18,12 @@ package com.borax12.materialdaterangepicker.date;
 
 import android.animation.ObjectAnimator;
 import android.app.Activity;
-import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.DialogFragment;
 import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -993,7 +993,7 @@ public class DatePickerDialog extends DialogFragment implements
     
     /**
      * setStartTitle
-     * @param String the title to display for start panel
+     * @param startTitle the title to display for start panel
      */ 
     public void setStartTitle(String startTitle) {
         this.startTitle = startTitle;
@@ -1001,7 +1001,7 @@ public class DatePickerDialog extends DialogFragment implements
     
     /**
      * setEndTitle
-     * @param String the title to display for end panel
+     * @param endTitle the title to display for end panel
      */ 
     public void setEndTitle(String endTitle) {
         this.endTitle = endTitle;

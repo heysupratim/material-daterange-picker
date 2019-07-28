@@ -18,11 +18,12 @@ package com.borax12.materialdaterangepicker.time;
 
 import android.animation.ObjectAnimator;
 import android.app.ActionBar.LayoutParams;
-import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.DialogFragment;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyCharacterMap;
@@ -311,8 +312,8 @@ public class TimePickerDialog extends DialogFragment implements OnValueSelectedL
         mSelectHours = res.getString(R.string.range_select_hours);
         mMinutePickerDescription = res.getString(R.string.range_minute_picker_description);
         mSelectMinutes = res.getString(R.string.range_select_minutes);
-        mSelectedColor = res.getColor(R.color.range_white);
-        mUnselectedColor = res.getColor(R.color.range_accent_color_focused);
+        mSelectedColor = ContextCompat.getColor(getContext(), R.color.range_white);
+        mUnselectedColor = ContextCompat.getColor(getContext(), R.color.range_accent_color_focused);
 
 
         tabHost = (TabHost) view.findViewById(R.id.range_tabHost);
@@ -535,10 +536,10 @@ public class TimePickerDialog extends DialogFragment implements OnValueSelectedL
             mTimePickerEnd.setAccentColor(mAccentColor);
             mOkButton.setTextColor(mAccentColor);
         }else{
-            int circleBackground = res.getColor(R.color.range_circle_background);
-            int backgroundColor = res.getColor(R.color.range_background_color);
-            int darkBackgroundColor = res.getColor(R.color.range_light_gray);
-            int lightGray = res.getColor(R.color.range_light_gray);
+            int circleBackground = ContextCompat.getColor(getContext(), R.color.range_circle_background);
+            int backgroundColor = ContextCompat.getColor(getContext(), R.color.range_background_color);
+            int darkBackgroundColor = ContextCompat.getColor(getContext(), R.color.range_light_gray);
+            int lightGray = ContextCompat.getColor(getContext(), R.color.range_light_gray);
 
             mTimePicker.setBackgroundColor(mThemeDark? lightGray : circleBackground);
             mTimePickerEnd.setBackgroundColor(mThemeDark ? lightGray : circleBackground);

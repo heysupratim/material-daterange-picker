@@ -30,6 +30,8 @@ import android.graphics.Typeface;
 import android.util.Log;
 import android.view.View;
 
+import androidx.core.content.ContextCompat;
+
 import com.borax12.materialdaterangepicker.R;
 
 
@@ -91,7 +93,7 @@ public class RadialTextsView extends View {
         }
 
         // Set up the paint.
-        int numbersTextColor = res.getColor(R.color.range_numbers_text_color);
+        int numbersTextColor = ContextCompat.getColor(getContext(), R.color.range_numbers_text_color);
         mPaint.setColor(numbersTextColor);
         String typefaceFamily = res.getString(R.string.range_radial_numbers_typeface);
         mTypefaceLight = Typeface.create(typefaceFamily, Typeface.NORMAL);
@@ -101,7 +103,7 @@ public class RadialTextsView extends View {
         mPaint.setTextAlign(Align.CENTER);
 
         // Set up the selected paint
-        int selectedTextColor = res.getColor(R.color.range_white);
+        int selectedTextColor = ContextCompat.getColor(getContext(), R.color.range_white);
         mSelectedPaint.setColor(selectedTextColor);
         mSelectedPaint.setAntiAlias(true);
         mSelectedPaint.setTextAlign(Align.CENTER);
@@ -157,9 +159,9 @@ public class RadialTextsView extends View {
         Resources res = context.getResources();
         int textColor;
         if (themeDark) {
-            textColor = res.getColor(R.color.range_white);
+            textColor = ContextCompat.getColor(context, R.color.range_white);
         } else {
-            textColor = res.getColor(R.color.range_numbers_text_color);
+            textColor = ContextCompat.getColor(context, R.color.range_numbers_text_color);
         }
         mPaint.setColor(textColor);
     }
