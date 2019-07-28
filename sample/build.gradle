@@ -17,15 +17,11 @@ android {
             minifyEnabled false
         }
     }
-    compileOptions {
-        sourceCompatibility = 1.8
-        targetCompatibility = 1.8
-    }
 }
 
 dependencies {
     implementation project(':library')
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.1.0-alpha03'
-    implementation 'com.google.android.material:material:1.1.0-alpha06'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.wdullaer:materialdatetimepicker:3.6.4'
 }

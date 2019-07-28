@@ -28,6 +28,8 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="range_day_of_week_label_condensed" />
+
     <style name="range_ActionButton">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">@dimen/range_material_button_height</item>
@@ -47,17 +49,5 @@
         <item name="android:paddingRight">@dimen/range_material_button_textpadding_horizontal</item>
         <item name="android:textColor">@color/range_button_color</item>
         <item name="android:textAllCaps">true</item>
-    </style>
-
-    <style name="range_time_label_thin">
-        <item name="android:fontFamily">sans-serif-light</item>
-    </style>
-
-    <style name="range_done_button_light">
-        <item name="android:fontFamily">sans-serif-light</item>
-    </style>
-
-    <style name="range_day_of_week_label_condensed">
-        <item name="android:fontFamily">sans-serif-condensed</item>
     </style>
 </resources>

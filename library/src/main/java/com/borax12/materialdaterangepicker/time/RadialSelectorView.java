@@ -28,8 +28,6 @@ import android.graphics.Paint;
 import android.util.Log;
 import android.view.View;
 
-import androidx.core.content.ContextCompat;
-
 import com.borax12.materialdaterangepicker.R;
 import com.borax12.materialdaterangepicker.Utils;
 
@@ -103,7 +101,7 @@ public class RadialSelectorView extends View {
 
         Resources res = context.getResources();
 
-        int accentColor = ContextCompat.getColor(context, R.color.range_accent_color);
+        int accentColor = res.getColor(R.color.range_accent_color);
         mPaint.setColor(accentColor);
         mPaint.setAntiAlias(true);
         mSelectionAlpha = SELECTED_ALPHA;
@@ -148,10 +146,10 @@ public class RadialSelectorView extends View {
         Resources res = context.getResources();
         int color;
         if (themeDark) {
-            color = ContextCompat.getColor(context, R.color.range_accent_color);
+            color = res.getColor(R.color.range_accent_color);
             mSelectionAlpha = SELECTED_ALPHA_THEME_DARK;
         } else {
-            color = ContextCompat.getColor(context, R.color.range_accent_color);
+            color = res.getColor(R.color.range_accent_color);
             mSelectionAlpha = SELECTED_ALPHA;
         }
         mPaint.setColor(color);

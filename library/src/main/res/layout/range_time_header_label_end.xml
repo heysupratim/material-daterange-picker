@@ -38,8 +38,7 @@
             android:layout_centerVertical="true"
             android:visibility="invisible"
             style="@style/range_time_label"
-            android:importantForAccessibility="no"
-            android:layout_toStartOf="@+id/range_separator_end" />
+            android:importantForAccessibility="no" />
         <FrameLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -47,9 +46,7 @@
             android:layout_alignLeft="@+id/range_hour_space_end"
             android:layout_marginLeft="@dimen/range_extra_time_label_margin"
             android:layout_marginRight="@dimen/range_extra_time_label_margin"
-            android:layout_centerVertical="true"
-            android:layout_alignEnd="@+id/range_hour_space_end"
-            android:layout_alignStart="@+id/range_hour_space_end">
+            android:layout_centerVertical="true" >
             <com.borax12.materialdaterangepicker.AccessibleTextView
                 android:id="@+id/range_hours_end"
                 android:layout_width="wrap_content"
@@ -72,8 +69,7 @@
             android:layout_centerVertical="true"
             android:textColor="@color/range_accent_color_focused"
             style="@style/range_time_label"
-            android:importantForAccessibility="no"
-            android:layout_alignEnd="@+id/range_center_view_end" />
+            android:importantForAccessibility="no" />
 
         <TextView
             android:id="@+id/range_minutes_space_end"
@@ -85,8 +81,7 @@
             android:visibility="invisible"
             android:textColor="@color/range_accent_color_focused"
             style="@style/range_time_label"
-            android:importantForAccessibility="no"
-            android:layout_toEndOf="@+id/range_separator_end" />
+            android:importantForAccessibility="no" />
         <FrameLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -94,9 +89,7 @@
             android:layout_alignLeft="@+id/range_minutes_space_end"
             android:layout_marginLeft="@dimen/range_extra_time_label_margin"
             android:layout_marginRight="@dimen/range_extra_time_label_margin"
-            android:layout_centerVertical="true"
-            android:layout_alignEnd="@+id/range_minutes_space_end"
-            android:layout_alignStart="@+id/range_minutes_space_end">
+            android:layout_centerVertical="true" >
             <com.borax12.materialdaterangepicker.AccessibleTextView
                 android:id="@+id/range_minutes_end"
                 style="@style/range_time_label"
@@ -114,9 +107,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
             android:layout_alignLeft="@+id/range_ampm_label_end"
-            android:layout_alignRight="@+id/range_ampm_label_end"
-            android:layout_alignStart="@+id/range_ampm_label_end"
-            android:layout_alignEnd="@+id/range_ampm_label_end" />
+            android:layout_alignRight="@+id/range_ampm_label_end" />
         <TextView
             android:id="@+id/range_ampm_label_end"
             android:layout_width="wrap_content"
@@ -128,6 +119,5 @@
             android:layout_alignBaseline="@+id/range_separator_end"
             android:textColor="@color/range_accent_color_focused"
             style="@style/range_ampm_label"
-            android:importantForAccessibility="no"
-            android:layout_toEndOf="@+id/range_minutes_space_end" />
+            android:importantForAccessibility="no" />
   </RelativeLayout>
