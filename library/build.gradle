@@ -11,10 +11,10 @@ ext {
 
     libraryDescription = 'A material Date and Time Range Picker for Android'
 
-    siteUrl = 'https://github.com/borax12/MaterialDateRangePicker'
-    gitUrl = 'https://github.com/borax12/MaterialDateRangePicker.git'
+    siteUrl = 'https://github.com/heysupratim/MaterialDateRangePicker'
+    gitUrl = 'https://github.com/heysupratim/MaterialDateRangePicker.git'
 
-    libraryVersion = '1.9'
+    libraryVersion = '2.0'
 
     developerId = 'borax12'
     developerName = 'Supratim Chakraborty'
