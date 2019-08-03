@@ -2,6 +2,9 @@
 
 [ ![Download](https://api.bintray.com/packages/borax12/maven/material-datetime-rangepicker/images/download.svg) ](https://bintray.com/borax12/maven/material-datetime-rangepicker/_latestVersion)
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.borax12.materialdaterangepicker/library/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.borax12.materialdaterangepicker/library)
+
+
 Material Date and Time Picker with Range Selection
 ======================================================
 
