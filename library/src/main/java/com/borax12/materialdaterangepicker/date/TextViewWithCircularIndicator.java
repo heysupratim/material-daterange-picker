@@ -23,10 +23,11 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Paint.Align;
-import android.graphics.Paint.Style;
-import android.support.annotation.NonNull;
+import android.graphics.Paint.Style;;
 import android.util.AttributeSet;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 
 import com.borax12.materialdaterangepicker.R;
 

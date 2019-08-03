@@ -22,7 +22,6 @@ import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyCharacterMap;
@@ -37,6 +36,8 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 
 import com.borax12.materialdaterangepicker.HapticFeedbackController;
 import com.borax12.materialdaterangepicker.R;
