@@ -6,7 +6,7 @@ Material Date and Time Picker with Range Selection
 ======================================================
 
 
-Credit to the original amazing material date picker library by wdullaer - https://github.com/wdullaer/MaterialDateTimePicker
+Credits to the original amazing material date picker library by wdullaer - https://github.com/wdullaer/MaterialDateTimePicker
 
 ## Adding to your project
 
@@ -19,16 +19,12 @@ repositories {
 
 
 dependencies {
-  implementation 'com.borax12.materialdaterangepicker:library:1.9'
+  implementation 'com.borax12.materialdaterangepicker:library:2.0'
 }
 
 ```
+Beginning Version 2.0 now also available on Maven Central
 
-
-## Update
---added highlighted range selection method
---added portuguese translation
---add end time selection in TimePicker
 
 ## Date Selection
 
@@ -82,6 +78,7 @@ public void onTimeSet(DatePickerDialog view, int year, int monthOfYear, int dayO
 
 ### Create a DatePickerDialog` using the supplied factory
 You will need to create a new instance of `DatePickerDialog` using the static `newInstance()` method, supplying proper default values and a callback. Once the dialogs are configured, you can call `show()`.
+
 ```java
 Calendar now = Calendar.getInstance();
 DatePickerDialog dpd = DatePickerDialog.newInstance(
@@ -107,7 +104,3 @@ tpd.show(getFragmentManager(), "Timepickerdialog");
 ```
 
 For other documentation regarding theming , handling orientation changes , and callbacks - check out the original documentation - https://github.com/wdullaer/MaterialDateTimePicker
-
-TODO
-----
-1. Custom Colors in Date and Time Picker - including indicators
