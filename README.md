@@ -97,7 +97,7 @@ You can also give from-to date by using following constructor:
 
 ```java
 DatePickerDialog dpd = com.borax12.materialdaterangepicker.date.DatePickerDialog.newInstance(
-                        AnalyticsFragment.this,
+                        YourFragment.this,
                         now.get(Calendar.YEAR),
                         now.get(Calendar.MONTH),
                         now.get(Calendar.DAY_OF_MONTH),
@@ -112,7 +112,7 @@ You will need to create a new instance of `TimePickerDialog` using the static `n
 ```java
 Calendar now = Calendar.getInstance();
 TimePickerDialog tpd = TimePickerDialog.newInstance(
-                        MainActivity.this,
+                        YourActivity.this,
                         now.get(Calendar.HOUR_OF_DAY),
                         now.get(Calendar.MINUTE),
                         false
