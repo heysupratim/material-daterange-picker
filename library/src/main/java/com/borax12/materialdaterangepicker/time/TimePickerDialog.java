@@ -141,6 +141,7 @@ public class TimePickerDialog extends DialogFragment implements OnValueSelectedL
     private TextView mAmPmTextViewEnd;
     private RadialPickerLayout mTimePickerEnd;
     private View mAmPmHitspaceEnd;
+    private boolean from;
 
 
     /**
@@ -169,27 +170,27 @@ public class TimePickerDialog extends DialogFragment implements OnValueSelectedL
      **/
 
     public static TimePickerDialog newInstance(OnTimeSetListener callback,
-            int hourOfDay, int minute, boolean is24HourMode) {
+            int hourOfDay, int minute, boolean is24HourMode, boolean from) {
         TimePickerDialog ret = new TimePickerDialog();
-        ret.initialize(callback, hourOfDay, minute, is24HourMode);
+        ret.initialize(callback, hourOfDay, minute, is24HourMode, from);
         return ret;
     }
 
     public static TimePickerDialog newInstance(OnTimeSetListener callback,
                                                int hourOfDay, int minute, boolean is24HourMode,
-                                                int hourOfDayEnd, int minuteEnd) {
+                                                int hourOfDayEnd, int minuteEnd, boolean from) {
         TimePickerDialog ret = new TimePickerDialog();
-        ret.initialize(callback, hourOfDay, minute,hourOfDayEnd,minuteEnd,is24HourMode);
+        ret.initialize(callback, hourOfDay, minute,hourOfDayEnd,minuteEnd,is24HourMode, from);
         return ret;
     }
 
     public void initialize(OnTimeSetListener callback,
-            int hourOfDay, int minute, boolean is24HourMode) {
-        initialize(callback, hourOfDay, minute, hourOfDay, minute, is24HourMode);
+            int hourOfDay, int minute, boolean is24HourMode, boolean from) {
+        initialize(callback, hourOfDay, minute, hourOfDay, minute, is24HourMode, from);
     }
 
     public void initialize(OnTimeSetListener callback,
-                           int hourOfDay, int minute, int hourOfDayEnd, int minuteEnd, boolean is24HourMode) {
+                           int hourOfDay, int minute, int hourOfDayEnd, int minuteEnd, boolean is24HourMode, boolean from) {
         mCallback = callback;
 
         mInitialHourOfDay = hourOfDay;
@@ -203,6 +204,7 @@ public class TimePickerDialog extends DialogFragment implements OnValueSelectedL
         mAccentColor = -1;
         mVibrate = true;
         mDismissOnPause = false;
+        this.from = from;
     }
 
     /**
@@ -333,6 +335,10 @@ public class TimePickerDialog extends DialogFragment implements OnValueSelectedL
 
         tabHost.addTab(startDatePage);
         tabHost.addTab(endDatePage);
+
+        if (!from) {
+            tabHost.setCurrentTab(1);
+        }
 
         mHourView = (TextView) view.findViewById(R.id.range_hours);
         mHourView.setOnKeyListener(keyboardListener);
