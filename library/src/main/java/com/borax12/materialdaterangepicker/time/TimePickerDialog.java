@@ -18,11 +18,12 @@ package com.borax12.materialdaterangepicker.time;
 
 import android.animation.ObjectAnimator;
 import android.app.ActionBar.LayoutParams;
-import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.DialogFragment;
+
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyCharacterMap;
@@ -315,7 +316,7 @@ public class TimePickerDialog extends DialogFragment implements OnValueSelectedL
         mUnselectedColor = res.getColor(R.color.mdtp_accent_color_focused);
 
 
-        tabHost = (TabHost) view.findViewById(R.id.tabHost);
+        tabHost = view.findViewById(R.id.tabHost);
         tabHost.findViewById(R.id.tabHost);
         tabHost.setup();
         TabHost.TabSpec startDatePage = tabHost.newTabSpec("start");
@@ -333,21 +334,21 @@ public class TimePickerDialog extends DialogFragment implements OnValueSelectedL
         tabHost.addTab(startDatePage);
         tabHost.addTab(endDatePage);
 
-        mHourView = (TextView) view.findViewById(R.id.hours);
+        mHourView = view.findViewById(R.id.hours);
         mHourView.setOnKeyListener(keyboardListener);
-        mHourViewEnd = (TextView) view.findViewById(R.id.hours_end);
+        mHourViewEnd = view.findViewById(R.id.hours_end);
         mHourViewEnd.setOnKeyListener(keyboardListener);
-        mHourSpaceView = (TextView) view.findViewById(R.id.hour_space);
-        mHourSpaceViewEnd = (TextView) view.findViewById(R.id.hour_space_end);
-        mMinuteSpaceView = (TextView) view.findViewById(R.id.minutes_space);
-        mMinuteSpaceViewEnd = (TextView) view.findViewById(R.id.minutes_space_end);
-        mMinuteView = (TextView) view.findViewById(R.id.minutes);
+        mHourSpaceView = view.findViewById(R.id.hour_space);
+        mHourSpaceViewEnd = view.findViewById(R.id.hour_space_end);
+        mMinuteSpaceView = view.findViewById(R.id.minutes_space);
+        mMinuteSpaceViewEnd = view.findViewById(R.id.minutes_space_end);
+        mMinuteView = view.findViewById(R.id.minutes);
         mMinuteView.setOnKeyListener(keyboardListener);
-        mMinuteViewEnd = (TextView) view.findViewById(R.id.minutes_end);
+        mMinuteViewEnd = view.findViewById(R.id.minutes_end);
         mMinuteViewEnd.setOnKeyListener(keyboardListener);
-        mAmPmTextView = (TextView) view.findViewById(R.id.ampm_label);
+        mAmPmTextView = view.findViewById(R.id.ampm_label);
         mAmPmTextView.setOnKeyListener(keyboardListener);
-        mAmPmTextViewEnd = (TextView) view.findViewById(R.id.ampm_label_end);
+        mAmPmTextViewEnd = view.findViewById(R.id.ampm_label_end);
         mAmPmTextViewEnd.setOnKeyListener(keyboardListener);
         String[] amPmTexts = new DateFormatSymbols().getAmPmStrings();
         mAmText = amPmTexts[0];
@@ -355,13 +356,13 @@ public class TimePickerDialog extends DialogFragment implements OnValueSelectedL
 
         mHapticFeedbackController = new HapticFeedbackController(getActivity());
 
-        mTimePicker = (RadialPickerLayout) view.findViewById(R.id.time_picker);
+        mTimePicker = view.findViewById(R.id.time_picker);
         mTimePicker.setOnValueSelectedListener(this);
         mTimePicker.setOnKeyListener(keyboardListener);
         mTimePicker.initialize(getActivity(), this, mInitialHourOfDay,
             mInitialMinute, mIs24HourMode);
 
-        mTimePickerEnd = (RadialPickerLayout) view.findViewById(R.id.time_picker_end);
+        mTimePickerEnd = view.findViewById(R.id.time_picker_end);
         mTimePickerEnd.setOnValueSelectedListener(this);
         mTimePickerEnd.setOnKeyListener(keyboardListener);
         mTimePickerEnd.initialize(getActivity(), this, mInitialHourOfDayEnd,
@@ -411,7 +412,7 @@ public class TimePickerDialog extends DialogFragment implements OnValueSelectedL
             }
         });
 
-        mOkButton = (Button) view.findViewById(R.id.ok);
+        mOkButton = view.findViewById(R.id.ok);
         mOkButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -430,7 +431,7 @@ public class TimePickerDialog extends DialogFragment implements OnValueSelectedL
         mOkButton.setOnKeyListener(keyboardListener);
         mOkButton.setTypeface(TypefaceHelper.get(getDialog().getContext(), "Roboto-Medium"));
 
-        mCancelButton = (Button) view.findViewById(R.id.cancel);
+        mCancelButton = view.findViewById(R.id.cancel);
         mCancelButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -452,8 +453,8 @@ public class TimePickerDialog extends DialogFragment implements OnValueSelectedL
             RelativeLayout.LayoutParams paramsSeparator = new RelativeLayout.LayoutParams(
                     LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
             paramsSeparator.addRule(RelativeLayout.CENTER_IN_PARENT);
-            TextView separatorView = (TextView) view.findViewById(R.id.separator);
-            TextView separatorViewEnd = (TextView) view.findViewById(R.id.separator_end);
+            TextView separatorView = view.findViewById(R.id.separator);
+            TextView separatorViewEnd = view.findViewById(R.id.separator_end);
             separatorView.setLayoutParams(paramsSeparator);
             separatorViewEnd.setLayoutParams(paramsSeparator);
         } else {
@@ -510,8 +511,8 @@ public class TimePickerDialog extends DialogFragment implements OnValueSelectedL
         }
 
         // Set the title (if any)
-        TextView timePickerHeader = (TextView) view.findViewById(R.id.time_picker_header);
-        TextView timePickerHeaderEnd = (TextView) view.findViewById(R.id.time_picker_header_end);
+        TextView timePickerHeader = view.findViewById(R.id.time_picker_header);
+        TextView timePickerHeaderEnd = view.findViewById(R.id.time_picker_header_end);
         if (!mTitle.isEmpty()) {
             timePickerHeader.setVisibility(TextView.VISIBLE);
             timePickerHeader.setText(mTitle);
@@ -979,7 +980,7 @@ public class TimePickerDialog extends DialogFragment implements OnValueSelectedL
     private void finishKbMode(boolean updateDisplays) {
         mInKbMode = false;
         if (!mTypedTimes.isEmpty()) {
-            int values[] = getEnteredTime(null);
+            int[] values = getEnteredTime(null);
             if(tabHost.getCurrentTab()==0){
                 mTimePicker.setTime(values[0], values[1]);
                 if (!mIs24HourMode) {

@@ -2,7 +2,7 @@ package com.borax12.materialdaterangepickerexample;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements
                         Log.d("TimePicker", "Dialog was cancelled");
                     }
                 });
-                tpd.show(getFragmentManager(), "Timepickerdialog");
+                tpd.show(getSupportFragmentManager(), "Timepickerdialog");
             }
         });
     }
