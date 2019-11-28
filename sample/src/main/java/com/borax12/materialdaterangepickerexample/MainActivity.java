@@ -29,12 +29,12 @@ public class MainActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_main);
 
         // Find our View instances
-        dateTextView = (TextView)findViewById(R.id.date_textview);
-        timeTextView = (TextView)findViewById(R.id.time_textview);
-        Button dateButton = (Button)findViewById(R.id.date_button);
-        Button timeButton = (Button)findViewById(R.id.time_button);
+        dateTextView = findViewById(R.id.date_textview);
+        timeTextView = findViewById(R.id.time_textview);
+        Button dateButton = findViewById(R.id.date_button);
+        Button timeButton = findViewById(R.id.time_button);
 
-        CheckBox ahl = (CheckBox) findViewById(R.id.autohighlight_checkbox);
+        CheckBox ahl = findViewById(R.id.autohighlight_checkbox);
         ahl.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements
                         now.get(Calendar.DAY_OF_MONTH)
                 );
                 dpd.setAutoHighlight(mAutoHighlight);
-                dpd.show(getFragmentManager(), "Datepickerdialog");
+                dpd.show(getSupportFragmentManager(), "Datepickerdialog");
             }
         });
 
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onResume() {
         super.onResume();
-        DatePickerDialog dpd = (DatePickerDialog) getFragmentManager().findFragmentByTag("Datepickerdialog");
+        DatePickerDialog dpd = (DatePickerDialog) getSupportFragmentManager().findFragmentByTag("Datepickerdialog");
         if(dpd != null) dpd.setOnDateSetListener(this);
     }
 
