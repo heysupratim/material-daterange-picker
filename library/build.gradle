@@ -11,10 +11,10 @@ ext {
 
     libraryDescription = 'A material Date and Time Range Picker for Android'
 
-    siteUrl = 'https://github.com/borax12/MaterialDateRangePicker'
-    gitUrl = 'https://github.com/borax12/MaterialDateRangePicker.git'
+    siteUrl = 'https://github.com/heysupratim/MaterialDateRangePicker'
+    gitUrl = 'https://github.com/heysupratim/MaterialDateRangePicker.git'
 
-    libraryVersion = '1.9'
+    libraryVersion = '2.0'
 
     developerId = 'borax12'
     developerName = 'Supratim Chakraborty'
@@ -27,7 +27,6 @@ ext {
 
 android {
     compileSdkVersion Integer.parseInt(project.ANDROID_BUILD_SDK_VERSION)
-    buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
 
     defaultConfig {
         minSdkVersion Integer.parseInt(project.ANDROID_BUILD_MIN_SDK_VERSION)
@@ -40,6 +39,10 @@ android {
         release {
             minifyEnabled false
         }
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
     }
 }
 

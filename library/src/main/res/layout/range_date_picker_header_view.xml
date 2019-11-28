@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2013 The Android Open Source Project
+<!--
+     Copyright (C) 2013 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -13,11 +14,13 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<com.borax12.materialdaterangepicker.date.AccessibleDateAnimator
-     xmlns:android="http://schemas.android.com/apk/res/android"
-     android:id="@+id/animator_end"
-     android:layout_width="@dimen/mdtp_date_picker_component_width"
-     android:layout_height="@dimen/mdtp_date_picker_view_animator_height"
-     android:gravity="center"
-     android:paddingLeft="8dp"
-     android:paddingRight="8dp" />
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/range_date_picker_header"
+    android:layout_width="@dimen/range_date_picker_component_width"
+    android:layout_height="@dimen/range_date_picker_header_height"
+    android:background="@color/range_calendar_header"
+    android:gravity="center"
+    android:includeFontPadding="false"
+    android:textColor="@color/range_white"
+    android:textSize="@dimen/range_date_picker_header_text_size"
+    android:importantForAccessibility="no" />

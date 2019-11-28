@@ -101,7 +101,7 @@ public class RadialSelectorView extends View {
 
         Resources res = context.getResources();
 
-        int accentColor = res.getColor(R.color.mdtp_accent_color);
+        int accentColor = res.getColor(R.color.range_accent_color);
         mPaint.setColor(accentColor);
         mPaint.setAntiAlias(true);
         mSelectionAlpha = SELECTED_ALPHA;
@@ -110,27 +110,27 @@ public class RadialSelectorView extends View {
         mIs24HourMode = is24HourMode;
         if (is24HourMode) {
             mCircleRadiusMultiplier = Float.parseFloat(
-                    res.getString(R.string.mdtp_circle_radius_multiplier_24HourMode));
+                    res.getString(R.string.range_circle_radius_multiplier_24HourMode));
         } else {
             mCircleRadiusMultiplier = Float.parseFloat(
-                    res.getString(R.string.mdtp_circle_radius_multiplier));
+                    res.getString(R.string.range_circle_radius_multiplier));
             mAmPmCircleRadiusMultiplier =
-                    Float.parseFloat(res.getString(R.string.mdtp_ampm_circle_radius_multiplier));
+                    Float.parseFloat(res.getString(R.string.range_ampm_circle_radius_multiplier));
         }
 
         // Calculate values for the radius size(s) of the numbers circle(s).
         mHasInnerCircle = hasInnerCircle;
         if (hasInnerCircle) {
             mInnerNumbersRadiusMultiplier =
-                    Float.parseFloat(res.getString(R.string.mdtp_numbers_radius_multiplier_inner));
+                    Float.parseFloat(res.getString(R.string.range_numbers_radius_multiplier_inner));
             mOuterNumbersRadiusMultiplier =
-                    Float.parseFloat(res.getString(R.string.mdtp_numbers_radius_multiplier_outer));
+                    Float.parseFloat(res.getString(R.string.range_numbers_radius_multiplier_outer));
         } else {
             mNumbersRadiusMultiplier =
-                    Float.parseFloat(res.getString(R.string.mdtp_numbers_radius_multiplier_normal));
+                    Float.parseFloat(res.getString(R.string.range_numbers_radius_multiplier_normal));
         }
         mSelectionRadiusMultiplier =
-                Float.parseFloat(res.getString(R.string.mdtp_selection_radius_multiplier));
+                Float.parseFloat(res.getString(R.string.range_selection_radius_multiplier));
 
         // Calculate values for the transition mid-way states.
         mAnimationRadiusMultiplier = 1;
@@ -146,10 +146,10 @@ public class RadialSelectorView extends View {
         Resources res = context.getResources();
         int color;
         if (themeDark) {
-            color = res.getColor(R.color.mdtp_accent_color);
+            color = res.getColor(R.color.range_accent_color);
             mSelectionAlpha = SELECTED_ALPHA_THEME_DARK;
         } else {
-            color = res.getColor(R.color.mdtp_accent_color);
+            color = res.getColor(R.color.range_accent_color);
             mSelectionAlpha = SELECTED_ALPHA;
         }
         mPaint.setColor(color);

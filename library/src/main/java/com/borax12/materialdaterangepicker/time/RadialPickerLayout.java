@@ -24,7 +24,6 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import androidx.annotation.NonNull;
 import android.text.format.DateUtils;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -37,6 +36,8 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
+
+import androidx.annotation.NonNull;
 
 import com.borax12.materialdaterangepicker.R;
 
@@ -135,7 +136,7 @@ public class RadialPickerLayout extends FrameLayout implements OnTouchListener {
         mGrayBox = new View(context);
         mGrayBox.setLayoutParams(new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        mGrayBox.setBackgroundColor(getResources().getColor(R.color.mdtp_transparent_black));
+        mGrayBox.setBackgroundColor(getResources().getColor(R.color.range_transparent_black));
         mGrayBox.setVisibility(View.INVISIBLE);
         addView(mGrayBox);
 

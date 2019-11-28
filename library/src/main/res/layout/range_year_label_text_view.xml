@@ -13,13 +13,12 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_focused="true"
-          android:state_pressed="false"
-          android:drawable="@color/mdtp_accent_color_focused" />
-
-    <item android:state_pressed="true"
-          android:drawable="@color/mdtp_neutral_pressed" />
-
-    <item android:drawable="@color/mdtp_white" />
-</selector>
+<com.borax12.materialdaterangepicker.date.TextViewWithCircularIndicator
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/range_month_text_view"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/range_year_label_height"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:textColor="@color/range_date_picker_year_selector"
+    android:textSize="@dimen/range_year_label_text_size" />

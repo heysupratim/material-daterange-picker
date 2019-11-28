@@ -21,7 +21,6 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import androidx.annotation.NonNull;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -31,6 +30,8 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
 import android.widget.ListView;
+
+import androidx.annotation.NonNull;
 
 import com.borax12.materialdaterangepicker.Utils;
 import com.borax12.materialdaterangepicker.date.DatePickerDialog.OnDateChangedListener;
