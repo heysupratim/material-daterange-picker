@@ -1,29 +1,29 @@
 apply plugin: 'com.android.library'
 
 
-ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'material-datetime-rangepicker'
-
-    publishedGroupId = 'com.borax12.materialdaterangepicker'
-    libraryName = 'MaterialDateRangePicker'
-    artifact = 'library'
-
-    libraryDescription = 'A material Date and Time Range Picker for Android'
-
-    siteUrl = 'https://github.com/heysupratim/MaterialDateRangePicker'
-    gitUrl = 'https://github.com/heysupratim/MaterialDateRangePicker.git'
-
-    libraryVersion = '2.0'
-
-    developerId = 'borax12'
-    developerName = 'Supratim Chakraborty'
-    developerEmail = 'sup270792@gmail.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-}
+//ext {
+//    bintrayRepo = 'maven'
+//    bintrayName = 'material-datetime-rangepicker'
+//
+//    publishedGroupId = 'com.borax12.materialdaterangepicker'
+//    libraryName = 'MaterialDateRangePicker'
+//    artifact = 'library'
+//
+//    libraryDescription = 'A material Date and Time Range Picker for Android'
+//
+//    siteUrl = 'https://github.com/heysupratim/MaterialDateRangePicker'
+//    gitUrl = 'https://github.com/heysupratim/MaterialDateRangePicker.git'
+//
+//    libraryVersion = '2.0'
+//
+//    developerId = 'borax12'
+//    developerName = 'Supratim Chakraborty'
+//    developerEmail = 'sup270792@gmail.com'
+//
+//    licenseName = 'The Apache Software License, Version 2.0'
+//    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//    allLicenses = ["Apache-2.0"]
+//}
 
 android {
     compileSdkVersion Integer.parseInt(project.ANDROID_BUILD_SDK_VERSION)
@@ -51,5 +51,5 @@ dependencies {
     implementation "com.google.android.material:material:1.2.0-alpha02"
 }
 
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+//apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+//apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
