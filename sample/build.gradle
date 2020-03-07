@@ -25,6 +25,7 @@ android {
 dependencies {
     implementation project(':library')
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'com.wdullaer:materialdatetimepicker:4.2.1'
 }

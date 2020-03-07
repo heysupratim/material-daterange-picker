@@ -37,7 +37,7 @@
         <item name="android:focusable">true</item>
     </style>
 
-    <style name="range_ActionButton.Text" tools:ignore="NewApi">
+    <style name="range_ActionButton.Text" parent="Widget.MaterialComponents.Button.TextButton" tools:ignore="NewApi">
         <item name="android:textSize">@dimen/range_material_button_textsize</item>
         <item name="android:singleLine">true</item>
         <item name="android:layout_gravity">center_vertical</item>

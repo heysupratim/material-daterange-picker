@@ -18,10 +18,10 @@ package com.borax12.materialdaterangepicker.time;
 
 import android.animation.ObjectAnimator;
 import android.app.ActionBar.LayoutParams;
-import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Bundle;
+import androidx.fragment.app.DialogFragment;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyCharacterMap;
@@ -318,6 +318,7 @@ public class TimePickerDialog extends DialogFragment implements OnValueSelectedL
 
         tabHost = (TabHost) view.findViewById(R.id.range_tabHost);
         tabHost.findViewById(R.id.range_tabHost);
+
         tabHost.setup();
         TabHost.TabSpec startDatePage = tabHost.newTabSpec("start");
         startDatePage.setContent(R.id.start_date_group);
@@ -980,7 +981,7 @@ public class TimePickerDialog extends DialogFragment implements OnValueSelectedL
     private void finishKbMode(boolean updateDisplays) {
         mInKbMode = false;
         if (!mTypedTimes.isEmpty()) {
-            int values[] = getEnteredTime(null);
+            int[] values = getEnteredTime(null);
             if(tabHost.getCurrentTab()==0){
                 mTimePicker.setTime(values[0], values[1]);
                 if (!mIs24HourMode) {
