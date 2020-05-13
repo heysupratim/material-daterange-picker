@@ -165,6 +165,7 @@ public class DatePickerDialog extends DialogFragment implements
     private int tabTag=1;
     private String startTitle;
     private String endTitle;
+    private boolean from;
 
     /**
      * The callback used to indicate the user is done filling in the date.
@@ -202,9 +203,10 @@ public class DatePickerDialog extends DialogFragment implements
      */
     public static DatePickerDialog newInstance(OnDateSetListener callBack, int year,
             int monthOfYear, 
-            int dayOfMonth) {
+            int dayOfMonth,
+            boolean from) {
         DatePickerDialog ret = new DatePickerDialog();
-        ret.initialize(callBack, year, monthOfYear, dayOfMonth);
+        ret.initialize(callBack, year, monthOfYear, dayOfMonth, from);
         return ret;
     }
 
@@ -223,19 +225,21 @@ public class DatePickerDialog extends DialogFragment implements
                                                int dayOfMonth,
                                                int yearEnd,
                                                int montOfYearEnd,
-                                               int dayOfMonthEnd) {
+                                               int dayOfMonthEnd,
+                                               boolean from) {
         DatePickerDialog ret = new DatePickerDialog();
-        ret.initialize(callBack, year, monthOfYear, dayOfMonth, yearEnd, montOfYearEnd, dayOfMonthEnd);
+        ret.initialize(callBack, year, monthOfYear, dayOfMonth, yearEnd, montOfYearEnd, dayOfMonthEnd, from);
         return ret;
     }
 
-    public void initialize(OnDateSetListener callBack, int year, int monthOfYear, int dayOfMonth) {
-        initialize(callBack, year, monthOfYear, dayOfMonth, year, monthOfYear, dayOfMonth);
+    public void initialize(OnDateSetListener callBack, int year, int monthOfYear, int dayOfMonth, boolean from) {
+        initialize(callBack, year, monthOfYear, dayOfMonth, year, monthOfYear, dayOfMonth, from);
     }
 
     public void initialize(OnDateSetListener callBack, int year, int monthOfYear, int dayOfMonth, int yearEnd,
                            int montOfYearEnd,
-                           int dayOfMonthEnd) {
+                           int dayOfMonthEnd,
+                           boolean from) {
         mCallBack = callBack;
         mCalendar.set(Calendar.YEAR, year);
         mCalendar.set(Calendar.MONTH, monthOfYear);
@@ -248,6 +252,7 @@ public class DatePickerDialog extends DialogFragment implements
         mAccentColor = -1;
         mVibrate = true;
         mDismissOnPause = false;
+        this.from = from;
     }
 
     @Override
@@ -333,6 +338,10 @@ public class DatePickerDialog extends DialogFragment implements
 
         tabHost.addTab(startDatePage);
         tabHost.addTab(endDatePage);
+
+        if (!from) {
+            tabHost.setCurrentTab(1);
+        }
 
         mDayOfWeekView = (TextView) view.findViewById(R.id.range_date_picker_header);
         mMonthAndDayView = (LinearLayout) view.findViewById(R.id.range_date_picker_month_and_day);

@@ -23,7 +23,7 @@
     android:layout_gravity="center_vertical"
     android:paddingBottom="8dp">
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/range_cancel"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
@@ -32,7 +32,7 @@
         style="@style/range_ActionButton.Text"
         android:text="@string/range_cancel" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/range_ok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
